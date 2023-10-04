@@ -4,12 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
+    <title>Authentication | Register</title>
     <!-- Add Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css">
     <style>
         body {
-            background-image: url('assets/image/bg.jpg');
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
@@ -56,10 +55,21 @@
             color: white;
             width: 100%;
         }
+
+        .btn-login:hover
+        {
+            background-color: white;
+            color: green;
+            width: 100%;
+            border: 1px solid green;
+        }
     </style>
 </head>
 
-<body>
+<body style="background-image: url('{{ asset('assets/image/bg.jpg') }}')">
+
+    <x-alert />
+
     <div class="container">
         <div class="row">
             <div class="col-md-6 offset-md-3 login-container">

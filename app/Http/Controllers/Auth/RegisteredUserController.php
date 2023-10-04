@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\TrxID;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
@@ -23,7 +24,7 @@ class RegisteredUserController extends Controller
         return view('auth.register');
     }
 
-    public function verification()
+    public function verfication()
     {
         return view('auth.verification');
     }
@@ -32,6 +33,25 @@ class RegisteredUserController extends Controller
     {
         return view('auth.package');
     }
+
+    public function storeFees(Request $request)
+    {
+        $validated = $request->validate([
+            'easypaisa_number' => 'required',
+            'sender_name' => 'required',
+            'trx_id' => 'required',
+        ]);
+
+        $trx_id = new TrxID();
+        $trx_id->easypaisa_number = $validated['easypaisa_number'];
+        $trx_id->sender_name = $validated['sender_name'];
+        $trx_id->trx_id = $validated['sender_name'];
+        $trx_id->save();
+        return redirect()->route('verification.page');
+
+    }
+
+
 
     /**
      * Handle an incoming registration request.
