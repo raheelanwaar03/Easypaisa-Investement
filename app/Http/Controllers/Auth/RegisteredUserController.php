@@ -23,6 +23,16 @@ class RegisteredUserController extends Controller
         return view('auth.register');
     }
 
+    public function verification()
+    {
+        return view('auth.verification');
+    }
+
+    public function package()
+    {
+        return view('auth.package');
+    }
+
     /**
      * Handle an incoming registration request.
      *
@@ -34,11 +44,15 @@ class RegisteredUserController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'mobile' => 'required',
+            'package' => 'required',
         ]);
 
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
+            'mobile' => $request->mobile,
+            'package' => $request->package,
             'password' => Hash::make($request->password),
         ]);
 
