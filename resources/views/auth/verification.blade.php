@@ -13,6 +13,7 @@
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-position: center;
+            height: 100vh;
             margin: 0;
             display: flex;
             justify-content: center;
@@ -77,6 +78,9 @@
                 <h2>Verification Page</h2>
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid cumque neque dolorem, molestiae
                     alias magni ullam quos, eligendi blanditiis aut ad quae reprehenderit, aspernatur doloribus.</p>
+                    <center>
+                        <a href="{{ url('/') }}" class="btn btn-login"> Home</a>
+                    </center>
             </div>
         </div>
 
