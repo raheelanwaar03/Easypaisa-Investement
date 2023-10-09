@@ -55,10 +55,12 @@
         <div class="wrapper_two" style="margin: 0px 10px;">
             <div class="row">
                 <div class="column">
-                    <div class="inner_data" style="background-color: #fff;border-radius: 10px;padding:20px;">
-                        <i class="fa fa-money" aria-hidden="true" style="font-size: 30px !important;"></i>
-                        <h5 style="font-size: 11px;">Send Money</h5>
-                    </div>
+                    <a href="{{ route('User.Widthraw.Amount') }}" style="text-decoration:none;color:#000">
+                        <div class="inner_data" style="background-color: #fff;border-radius: 10px;padding:20px;">
+                            <i class="fa fa-money" aria-hidden="true" style="font-size: 30px !important;"></i>
+                            <h5 style="font-size: 11px;">Widthraw Money</h5>
+                        </div>
+                    </a>
                 </div>
                 <div class="column">
                     <div class="inner_data" style="background-color: #fff;border-radius: 10px;padding:20px;">
