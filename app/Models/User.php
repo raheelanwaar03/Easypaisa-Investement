@@ -26,6 +26,7 @@ class User extends Authenticatable
         'status',
         'package',
         'password',
+        'role',
     ];
 
     /**
