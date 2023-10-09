@@ -15,7 +15,7 @@
     <div class="container" style="border: 0px solid red;background-color: #eee !important;">
         <div class="topnav">
             <a href="#"
-                style="text-align: center;margin-left:180px;color: #fff;"><span><b>easypaisa</b></span></a>
+                style="text-align: center;margin-left:180px;color: #fff;"><span><b>{{ env('APP_NAME') }}</b></span></a>
             <a href="#" style="float: right;"><i class="fa fa-bell-o" style="color: #fff !important;"></i></a>
             <a href="#" style="float: right;"><i class="fa fa-search" style="color: #fff !important;"></i></a>
 
@@ -25,7 +25,7 @@
             <div class="inner_box_div"
                 style="background-color: #fff;border-radius: 10px;padding:12px;margin: 0px 20px;">
                 <div class="row_box" style="">
-                    <div class="column_box" style="float: left;"><span><b>easypaisa</b></span></div>
+                    <div class="column_box" style="float: left;"><span><b>{{ env('APP_NAME') }}</b></span></div>
                     <div class="column_box" style="float: right;text-align: right;padding-top: 5px;"><img
                             src="{{ asset('assets/images/gift.png') }}" alt="gift" width="15px"> <span
                             style="font-size: 12px;">My Rewards</span></div>
@@ -35,7 +35,7 @@
                         &nbsp;
                     </div>
                     <div class="column_box" style="float: left;padding-top: 5px;">
-                        <span style=""><b>Rs.17.88</b></span> <i class="fa fa-arrow-circle-o-right"
+                        <span style=""><b>Rs.{{ auth()->user()->balance }}</b></span> <i class="fa fa-arrow-circle-o-right"
                             aria-hidden="true" style="color: #000 !important;"></i>
                     </div>
                     <div class="column_box" style="float: right;text-align: right;padding-top: 5px;">&nbsp;</div>
@@ -77,7 +77,7 @@
         </div>
 
         <div class="wrapper_three" style="border: 0px solid green;padding: 0px 15px;">
-            <p style="margin: 10px 0px;font-size: 16px;"><b>More With easypaisa</b></p>
+            <p style="margin: 10px 0px;font-size: 16px;"><b>More With {{ env('APP_NAME') }}</b></p>
             <div class="center">
                 <div class="slider" data-pos="0">
                     <div class="slider__slides">
