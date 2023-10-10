@@ -112,13 +112,16 @@
                         </div>
                     </a>
                 </div>
-                <div class="column">
-                    <div class="inner_data" style="background-color: #fff;border-radius: 10px;padding:20px;">
-                        <i class="fa fa-dashboard" aria-hidden="true" style="font-size: 30px !important;"></i>
-                        <!-- <h5 style="font-size: 11px;">Easycash Loan</h5> -->
-                        <h5 style="font-size: 11px;">Dashboard</h5>
+                <a href="{{ route('User.Team.Members') }}" style="text-decoration:none;color:#000">
+                    <div class="column">
+                        <div class="inner_data" style="background-color: #fff;border-radius: 10px;padding:20px;">
+                            <i class="fa fa-handshake-o" aria-hidden="true"
+                                            style="font-size: 30px !important;"></i>
+                            <!-- <h5 style="font-size: 11px;">Easycash Loan</h5> -->
+                            <h5 style="font-size: 11px;">Team Members</h5>
+                        </div>
                     </div>
-                </div>
+                </a>
                 <div class="column" id="myBtn">
                     <div class="inner_data" style="background-color: #fff;border-radius: 10px;padding:20px;">
                         <i class="fa fa-user-plus" style="font-size: 30px !important;" aria-hidden="true"></i>
@@ -137,7 +140,7 @@
                 <span class="close">&times;</span>
                 <div class="my-5">
                     <input type="text" style="padding: 15px;width:90%;border:1px solid black;"
-                        value="{{ route('register', ['referal' => Auth::user()->email]) }}" id="myInput" readonly>
+                        value="{{ route('register', ['referral' => Auth::user()->email]) }}" id="myInput" readonly>
                     <div class="">
                         <button onclick="copy()"
                             style="padding: 16px 25px;margin-top:10px;border:none;border-radius:12px;background-color:green;color:white">copy</button>

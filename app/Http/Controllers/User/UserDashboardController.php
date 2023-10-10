@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use App\Models\User\WidthrawReq;
 use Illuminate\Http\Request;
 
@@ -58,6 +59,11 @@ class UserDashboardController extends Controller
         return view('user.account.history',compact('history'));
     }
 
+    public function team()
+    {
+        $referrals = User::where('referral',auth()->user()->email)->get();
+        return view('user.work.team',compact('referrals'));
+    }
 
 
 }

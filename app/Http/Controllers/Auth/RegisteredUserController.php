@@ -19,9 +19,9 @@ class RegisteredUserController extends Controller
     /**
      * Display the registration view.
      */
-    public function create(): View
+    public function create($referral = 'default'): View
     {
-        return view('auth.register');
+        return view('auth.register',compact('referral'));
     }
 
     public function verfication()

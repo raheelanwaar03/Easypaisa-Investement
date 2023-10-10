@@ -10,6 +10,7 @@ Route::prefix('User/')->name('User.')->middleware('auth', 'user')->group(functio
     Route::get('Widthraw/Amount',[UserDashboardController::class,'widthraw'])->name('Widthraw.Amount');
     Route::post('Store/Widthraw',[UserDashboardController::class,'storeWidthraw'])->name('Store.Widthraw');
     Route::get('Widthraw/History',[UserDashboardController::class,'history'])->name('Widthraw.History');
+    Route::get('Team/Members',[UserDashboardController::class,'team'])->name('Team.Members');
 
 
 });
