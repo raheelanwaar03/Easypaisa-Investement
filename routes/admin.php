@@ -10,5 +10,6 @@ Route::prefix('Admin/')->name('Admin.')->middleware('auth', 'admin')->group(func
 
     Route::get('Dashboard',[AdminDashboardController::class,'index'])->name('Dashboard');
     Route::get('Add/Plans',[PlansController::class,'add'])->name('Add.Plans');
+    Route::post('Store/Plans',[PlansController::class,'store'])->name('Store.Plans');
 
 });
