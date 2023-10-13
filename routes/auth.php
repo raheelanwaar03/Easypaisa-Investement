@@ -35,8 +35,8 @@ Route::middleware('guest')->group(function () {
                 ->name('password.store');
 });
 
-Route::get('/Package/Details',[RegisteredUserController::class,'package'])->name('Package.Details');
-Route::get('/Verfication/Page',[RegisteredUserController::class,'verfication'])->name('verification.page');
+Route::get('/Package/Details',[RegisteredUserController::class,'package'])->name('Package.Details')->middleware('status');
+Route::get('/Verfication/Page',[RegisteredUserController::class,'verfication'])->name('verification.page')->middleware('status');
 
 Route::middleware('auth')->group(function () {
     Route::get('verify-email', EmailVerificationPromptController::class)

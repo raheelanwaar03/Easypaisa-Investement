@@ -18,7 +18,7 @@ class status
 
         if(auth()->user()->status == 'approved')
         {
-            return $next($request);
+            return redirect(route('User.Dashboard'));
         }
         elseif(auth()->user()->status == 'pending')
         {

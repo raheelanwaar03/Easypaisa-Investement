@@ -66,7 +66,11 @@
         <div class="topnav">
             <a href="#"
                 style="text-align: center;margin-left:180px;color: #fff;"><span><b>{{ env('APP_NAME') }}</b></span></a>
-            <a href="#" style="float: right;"><i class="fa fa-bell-o" style="color: #fff !important;"></i></a>
+            <form action="{{ route('logout') }}" method="POST">
+                @csrf
+                <button style="float: right;text-decoration:none;border:none;background-color:#2ABC71;margin-top:12px;margin-right:8px;" type="submit"><i
+                        class="fa fa-bell-o" style="color: #fff !important;"></i></button>
+            </form>
             <a href="#" style="float: right;"><i class="fa fa-search" style="color: #fff !important;"></i></a>
 
         </div>
@@ -115,8 +119,7 @@
                 <a href="{{ route('User.Team.Members') }}" style="text-decoration:none;color:#000">
                     <div class="column">
                         <div class="inner_data" style="background-color: #fff;border-radius: 10px;padding:20px;">
-                            <i class="fa fa-handshake-o" aria-hidden="true"
-                                            style="font-size: 30px !important;"></i>
+                            <i class="fa fa-handshake-o" aria-hidden="true" style="font-size: 30px !important;"></i>
                             <!-- <h5 style="font-size: 11px;">Easycash Loan</h5> -->
                             <h5 style="font-size: 11px;">Team Members</h5>
                         </div>

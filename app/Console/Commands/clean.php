@@ -83,7 +83,7 @@ class clean extends Command
         $user->package = 'dimond';
         $user->mobile = '03000000000';
         $user->email = 'admin@gmail.com';
-        $user->password = Hash::make('Movies123@');
+        $user->password = Hash::make('asdfasdf');
         $user->status = 'approved';
         $user->role = 'admin';
         $user->save();
