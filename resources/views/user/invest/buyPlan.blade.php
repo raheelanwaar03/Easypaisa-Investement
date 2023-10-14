@@ -53,24 +53,37 @@
 
         <div class="container-fluid">
             <div class="row">
-                @foreach ($plans as $plan)
-                    <div class="col-md-4 mb-5">
-                        <div class="card mt-3" style="width: 28rem;">
-                            <img class="card-img-top" src="{{ asset('assets/image/invest.jpg') }}" height="250px"
-                                width="277px" alt="Card image cap">
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Investment: {{ $plan->investment }}</li>
-                                <li class="list-group-item">Daily Commission: 10%</li>
-                                <li class="list-group-item">Duration: {{ $plan->duration }}days</li>
-                                <li class="list-group-item">Total Return: {{ $plan->total_profit }}</li>
-                            </ul>
-                            <div class="card-footer">
-                                <a href="{{ route('User.Buy.Plan', ['id' => $plan->id]) }}"
-                                    class="btn btn-success">Buy</a>
-                            </div>
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="text-center">{{ $plan->name }}</h3>
+                        </div>
+                        <div class="card-body">
+                            <h4>To activat this plan you have to pay {{ $plan->investment }} on this number
+                                0300-1234567. In {{ $plan->duration }} days you got {{ $plan->total_profit }} total
+                                profit.</h4>
+                                <form action="{{ route('User.Store.Plan') }}" method="POST" style="margin-top: 40px">
+                                    @csrf
+                                    <div class="form-group">
+                                        <label for="">Your Sending Number</label>
+                                        <input type="number" name="number" class="form-control"
+                                            placeholder="Enter your sending number">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">Your Account Name</label>
+                                        <input type="text" name="name" class="form-control"
+                                            placeholder="Enter Your Account Name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">Your Transcation Id</label>
+                                        <input type="text" name="trxId" class="form-control"
+                                            placeholder="Enter Trascation Id">
+                                    </div>
+                                    <button class="btn btn-success">Submit Request</button>
+                                </form>
                         </div>
                     </div>
-                @endforeach
+                </div>
             </div>
         </div>
 

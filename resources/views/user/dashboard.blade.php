@@ -68,8 +68,9 @@
                 style="text-align: center;margin-left:180px;color: #fff;"><span><b>{{ env('APP_NAME') }}</b></span></a>
             <form action="{{ route('logout') }}" method="POST">
                 @csrf
-                <button style="float: right;text-decoration:none;border:none;background-color:#2ABC71;margin-top:12px;margin-right:8px;" type="submit"><i
-                        class="fa fa-bell-o" style="color: #fff !important;"></i></button>
+                <button
+                    style="float: right;text-decoration:none;border:none;background-color:#2ABC71;margin-top:12px;margin-right:8px;"
+                    type="submit"><i class="fa fa-bell-o" style="color: #fff !important;"></i></button>
             </form>
             <a href="#" style="float: right;"><i class="fa fa-search" style="color: #fff !important;"></i></a>
 
@@ -119,7 +120,7 @@
                 <a href="{{ route('User.Team.Members') }}" style="text-decoration:none;color:#000">
                     <div class="column">
                         <div class="inner_data" style="background-color: #fff;border-radius: 10px;padding:20px;">
-                            <i class="fa fa-handshake-o" aria-hidden="true" style="font-size: 30px !important;"></i>
+                            <i class="fa fa-users" aria-hidden="true" style="font-size: 30px !important;"></i>
                             <!-- <h5 style="font-size: 11px;">Easycash Loan</h5> -->
                             <h5 style="font-size: 11px;">Team Members</h5>
                         </div>
@@ -172,105 +173,39 @@
                         <div class="slider__slide">
                             <div class="row" style="padding: 17px 0px;">
                                 <div class="column_slider">
-                                    <!-- <div class="inner_data">
-                                        <i class="fa fa-money" aria-hidden="true" style="font-size: 20px !important;"></i>
-                                        <br/>
-                                        <span style="font-size: 11px;">Easycash Loan</span>
-                                    </div> -->
-                                </div>
-                                <div class="column_slider">
                                     <div class="inner_data">
-                                        <i class="fa fa-gift" aria-hidden="true"
-                                            style="font-size: 20px !important;"></i>
-                                        <br />
-                                        <span style="font-size: 11px;">Tohfa</span>
+                                        <a href="{{ route('User.Investment.Plans') }}" style="text-decoration: none;color:black">
+                                            <i class="fa fa-handshake-o" aria-hidden="true"
+                                                style="font-size: 35px !important;"></i>
+                                            <br />
+                                            <span style="font-size: 15px;">Invest & Earn</span>
+                                        </a>
                                     </div>
                                 </div>
-                                <!-- <div class="column_slider">
-                                            <div class="inner_data">
-                                                <i class="fa fa-user-plus" style="font-size: 20px !important;" aria-hidden="true"></i>
-                                                <br>
-                                                <span style="font-size: 11px;">Invite & Earn</span>
-                                            </div>
-                                        </div> -->
-                                <!--
-                                        <div class="column_slider">
-                                            <div class="inner_data">
-                                                <img src="assets/images/raast.jpg" alt="gift" width="30px">
-                                                <br>
-                                                <span style="font-size: 11px;">Raast Payment</span>
-                                            </div>
-                                        </div> -->
                                 <div class="column_slider">
                                     <div class="inner_data">
                                         <i class="fa fa-mobile" aria-hidden="true"
-                                            style="font-size: 20px !important;"></i>
+                                            style="font-size: 35px !important;"></i>
                                         <br />
-                                        <span style="font-size: 11px;">Select package</span>
+                                        <span style="font-size: 15px;">Select package</span>
                                     </div>
                                 </div>
-
-                                <!-- <div class="column_slider">
-                                            <div class="inner_data">
-                                                <i class="fa fa-credit-card" aria-hidden="true" style="font-size: 20px !important;"></i>
-                                                <br>
-                                                <span style="font-size: 11px;">Buy Now <br> pay Later</span>
-                                            </div>
-                                        </div> -->
-
-
                                 <div class="column_slider">
                                     <div class="inner_data">
                                         <i class="fa fa-money" aria-hidden="true"
-                                            style="font-size: 20px !important;"></i>
+                                            style="font-size: 35px !important;"></i>
                                         <br />
-                                        <span style="font-size: 11px;">Send Money</span>
-                                    </div>
-                                </div>
-                                <div class="column_slider">
-                                    <div class="inner_data">
-                                        <i class="fa fa-handshake-o" aria-hidden="true"
-                                            style="font-size: 20px !important;"></i>
-                                        <br />
-                                        <span style="font-size: 11px;">Invest and earn</span>
-                                    </div>
-                                </div>
-                                <div class="column_slider">
-                                    <div class="inner_data">
-                                        <!-- <img src="assets/images/rupee.png" alt="gift" width="25px">  -->
-                                        <i class="fa fa-money" aria-hidden="true"
-                                            style="font-size: 20px !important;"></i>
-                                        <br />
-                                        <span style="font-size: 11px;">Rs.1 Game</span>
-                                    </div>
-                                </div>
-
-                                <div class="column_slider">
-                                    <div class="inner_data">
-                                        <i class="fa fa-archive" aria-hidden="true"
-                                            style="font-size: 20px !important;"></i>
-                                        <br />
-                                        <span style="font-size: 11px;">Savings</span>
-                                    </div>
-                                </div>
-                                <div class="column_slider">
-                                    <div class="inner_data">
-                                        <i class="fa fa-list-alt" aria-hidden="true"
-                                            style="font-size: 20px !important;"></i>
-                                        <br>
-                                        <span style="font-size: 11px;">Promote and earn</span>
+                                        <span style="font-size: 15px;">Send Money</span>
                                     </div>
                                 </div>
                                 <div class="column_slider">
                                     <div class="inner_data">
                                         <i class="fa fa-ellipsis-h" aria-hidden="true"
-                                            style="font-size: 20px !important;"></i>
+                                            style="font-size: 35px !important;"></i>
                                         <br />
-                                        <span style="font-size: 11px;">See All</span>
+                                        <span style="font-size: 15px;">See All</span>
                                     </div>
                                 </div>
-
-
                             </div>
                         </div>
                         <div class="slider__slide">

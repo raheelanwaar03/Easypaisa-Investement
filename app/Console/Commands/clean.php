@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Models\admin\Plans;
 use App\Models\User;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Artisan;
@@ -75,6 +76,26 @@ class clean extends Command
         // $level->status = 1;
         // $level->save();
 
+        $plan = new Plans();
+        $plan->name = 'first';
+        $plan->investment = 500;
+        $plan->total_profit = 800;
+        $plan->duration = 15;
+        $plan->save();
+
+        $plan = new Plans();
+        $plan->name = 'second';
+        $plan->investment = 1500;
+        $plan->total_profit = 2200;
+        $plan->duration = 30;
+        $plan->save();
+
+        $plan = new Plans();
+        $plan->name = 'first';
+        $plan->investment = 2000;
+        $plan->total_profit = 2800;
+        $plan->duration = 45;
+        $plan->save();
 
         $user = new User();
         $user->name = 'Admin';
