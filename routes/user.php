@@ -15,7 +15,9 @@ Route::prefix('User/')->name('User.')->middleware('auth', 'user')->group(functio
     Route::get('Invest',[InvestmentController::class,'index'])->name('Investment.Plans');
     // buy plan
     Route::get('Buy/Plan/{id}',[InvestmentController::class,'buyPlan'])->name('Buy.Plan');
-    Route::get('Store/Plan',[InvestmentController::class,'storePlan'])->name('Store.Plan');
+    Route::post('Store/Plan/{id}',[InvestmentController::class,'storePlan'])->name('Store.Plan');
+    Route::get('Active/Plans',[InvestmentController::class,'activePlan'])->name('Active.Plan');
+    Route::get('Daily/Profit',[InvestmentController::class,'dailyProfit'])->name('Daily.Profit');
 
 
 });

@@ -21,22 +21,43 @@ class InvestmentController extends Controller
         return view('user.invest.buyPlan',compact('plan'));
     }
 
-    public function storePlan(Request $request)
+    public function storePlan(Request $request,$id)
     {
         $validated = $request->validate([
             'number' => 'required',
-            'trxID' => 'required',
+            'trxId' => 'required',
             'name' => 'required',
         ]);
 
+        $plan = Plans::find($id);
 
         $user_plan = new BuyPlan();
         $user_plan->user_id = auth()->user()->id;
+        $user_plan->plan_id = $plan->id;
+        $user_plan->plan_name = $plan->name;
+        $user_plan->plan_investment = $plan->investment;
         $user_plan->name = $validated['name'];
         $user_plan->number = $validated['number'];
         $user_plan->trxId = $validated['trxId'];
         $user_plan->save();
         return redirect()->back()->with('success','Your request has been submitted successfully');
+    }
+
+    public function activePlan()
+    {
+        $plans = BuyPlan::where('user_id',auth()->user()->id)->get();
+        return view('user.invest.activePlan',compact('plans'));
+    }
+
+    public function dailyProfit()
+    {
+        $plans = BuyPlan::where('user_id',auth()->user()->id)->where('status','approved')->get();
+        $investment = 0;
+        foreach($plans as $plan)
+        {
+            $investment += $plan->plan_investment;
+        }
+        return $investment;
 
     }
 

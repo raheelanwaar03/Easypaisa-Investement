@@ -184,10 +184,12 @@
                                 </div>
                                 <div class="column_slider">
                                     <div class="inner_data">
-                                        <i class="fa fa-mobile" aria-hidden="true"
-                                            style="font-size: 35px !important;"></i>
-                                        <br />
-                                        <span style="font-size: 15px;">Select package</span>
+                                        <a href="{{ route('User.Active.Plan') }}" style="text-decoration: none;color:black">
+                                            <i class="fa fa-superpowers" aria-hidden="true"
+                                                style="font-size: 35px !important;"></i>
+                                            <br />
+                                            <span style="font-size: 15px;">Active Plans</span>
+                                        </a>
                                     </div>
                                 </div>
                                 <div class="column_slider">
