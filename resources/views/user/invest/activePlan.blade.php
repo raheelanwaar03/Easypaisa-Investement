@@ -85,12 +85,12 @@
                             src="{{ asset('assets/images/gift.png') }}" alt="gift" width="15px"> <span
                             style="font-size: 12px;">My Rewards</span></div>
                     <div class="column_box" style="float: left;text-align: left;padding-top: 5px;"><span
-                            style="font-size: 11px;">Available Balance</span></div>
+                            style="font-size: 11px;">Wallet Balance</span></div>
                     <div class="column_box" style="float: right;padding-top: 5px;">
                         &nbsp;
                     </div>
                     <div class="column_box" style="float: left;padding-top: 5px;">
-                        <span style=""><b>Rs.{{ auth()->user()->balance }}</b></span> <i
+                        <span style=""><b>Rs.{{ wallet_balance() }}</b></span> <i
                             class="fa fa-arrow-circle-o-right" aria-hidden="true" style="color: #000 !important;"></i>
                     </div>
                     <div class="column_box" style="float: right;text-align: right;padding-top: 5px;">&nbsp;</div>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\user;
 use App\Http\Controllers\Controller;
 use App\Models\admin\Plans;
 use App\Models\User\BuyPlan;
+use App\Models\User\Wallet;
 use Illuminate\Http\Request;
 
 class InvestmentController extends Controller
@@ -57,7 +58,14 @@ class InvestmentController extends Controller
         {
             $investment += $plan->plan_investment;
         }
-        return $investment;
+        // 10 % commission of investment
+        $profit = $investment * 10 / 100;
+
+        $wallet = new Wallet();
+        $wallet->user_id = auth()->user()->id;
+        $wallet->wallet += $profit;
+        $wallet->save();
+        return redirect()->back()->with('success','you have got your 10% commission on your investment');
 
     }
 
