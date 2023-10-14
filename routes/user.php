@@ -18,6 +18,7 @@ Route::prefix('User/')->name('User.')->middleware('auth', 'user')->group(functio
     Route::post('Store/Plan/{id}',[InvestmentController::class,'storePlan'])->name('Store.Plan');
     Route::get('Active/Plans',[InvestmentController::class,'activePlan'])->name('Active.Plan');
     Route::get('Daily/Profit',[InvestmentController::class,'dailyProfit'])->name('Daily.Profit');
+    Route::get('Convert',[InvestmentController::class,'convert'])->name('Convert.Balance');
 
 
 });

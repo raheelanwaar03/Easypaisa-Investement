@@ -16,7 +16,7 @@
     <x-alert />
     <div class="container" style="border: 0px solid red;background-color: #eee !important;">
         <div class="topnav">
-            <a href="#"
+            <a href="{{ route('User.Dashboard') }}"
                 style="text-align: center;margin-left:180px;color: #fff;"><span><b>{{ env('APP_NAME') }}</b></span></a>
             <a href="#" style="float: right;"><i class="fa fa-bell-o" style="color: #fff !important;"></i></a>
             <a href="#" style="float: right;"><i class="fa fa-search" style="color: #fff !important;"></i></a>
@@ -27,7 +27,7 @@
             <div class="inner_box_div"
                 style="background-color: #fff;border-radius: 10px;padding:12px;margin: 0px 20px;">
                 <div class="row_box" style="">
-                    <div class="column_box" style="float: left;"><span><b>{{ env('APP_NAME') }}</b></span></div>
+                    <div class="column_box" style="float: left;"><span><b>Widthraw Balance</b></span></div>
                     <div class="column_box" style="float: right;text-align: right;padding-top: 5px;">
                         <a href="{{ route('User.Widthraw.History') }}"><button
                                 style="background-color: #2ABC71;border-radius: 10px;border: none;color: #fff;font-size:15px;padding:8px 12px;">Widthraw
@@ -51,13 +51,12 @@
 
             </div>
         </div>
-
-        <div class="container">
+        <div class="container" style="margin-top: 30px">
             <div class="row">
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="text-center">Widthraw Balance</h3>
+                            <p class="text-center mt-4" style="font-size: 14px">Daily profit is ({{ wallet_balance() }}) you can move it to main wallet for requsting widthraw. <a href="{{ route('User.Convert.Balance') }}" class="btn btn-success">Move to main</a></p>
                         </div>
                     </div>
                     <div class="card-body">

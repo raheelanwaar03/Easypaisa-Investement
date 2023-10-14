@@ -4,6 +4,7 @@ namespace App\Http\Controllers\user;
 
 use App\Http\Controllers\Controller;
 use App\Models\admin\Plans;
+use App\Models\User;
 use App\Models\User\BuyPlan;
 use App\Models\User\Wallet;
 use Illuminate\Http\Request;
@@ -66,7 +67,19 @@ class InvestmentController extends Controller
         $wallet->wallet += $profit;
         $wallet->save();
         return redirect()->back()->with('success','you have got your 10% commission on your investment');
-
     }
+
+    public function convert()
+    {
+        $user = User::where('id',auth()->user()->id)->first();
+        $user->balance += wallet_balance();
+        $user->save();
+
+        $wallet = Wallet::where('user_id',auth()->user()->id)->first();
+        $wallet->wallet = 0;
+        $wallet->save();
+        return redirect()->back()->with('success','your wallet balance has been moved to main wallet');
+    }
+
 
 }
