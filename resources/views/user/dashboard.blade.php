@@ -194,10 +194,12 @@
                                 </div>
                                 <div class="column_slider">
                                     <div class="inner_data">
-                                        <i class="fa fa-money" aria-hidden="true"
-                                            style="font-size: 35px !important;"></i>
-                                        <br />
-                                        <span style="font-size: 15px;">Send Money</span>
+                                        <a href="{{ route('User.Convert.Balance') }}" style="text-decoration: none;color:black">
+                                            <i class="fa fa-money" aria-hidden="true"
+                                                style="font-size: 35px !important;"></i>
+                                            <br />
+                                            <span style="font-size: 15px;">Convert Balance</span>
+                                        </a>
                                     </div>
                                 </div>
                                 <div class="column_slider">
@@ -229,45 +231,8 @@
         </div>
     </div>
 
-    <div class="footer">
-        <div class="row_footer">
-            <div class="column_footer">
-                <div style="text-align: center;">
-                    <i class="fa fa-home"></i>
-                    <br>
-                    <span style="font-size: 12px;">Home</span>
-                </div>
-            </div>
-            <div class="column_footer">
-                <div style="text-align: center;">
-                    <i class="fa fa-map-marker" aria-hidden="true"></i>
-                    <br>
-                    <span style="font-size: 12px;">Cash Points</span>
-                </div>
-            </div>
-            <div class="column_footer">
-                <div>
-                    <i class="fa fa-qrcode"
-                        style="font-size: 35px !important;color: #fff;background-color: #2ABC71;padding:5px 5px;"></i>
-                </div>
+    @include('layouts.links')
 
-            </div>
-            <div class="column_footer">
-                <div style="text-align: center;">
-                    <i class="fa fa-bullhorn" aria-hidden="true"></i>
-                    <br>
-                    <span style="font-size: 12px;">Promotions</span>
-                </div>
-            </div>
-            <div class="column_footer">
-                <div style="text-align: center;">
-                    <i class="fa fa-user"></i>
-                    <br>
-                    <span style="font-size: 12px;">My Account</span>
-                </div>
-            </div>
-        </div>
-    </div>
     </div>
 
     <footer>
