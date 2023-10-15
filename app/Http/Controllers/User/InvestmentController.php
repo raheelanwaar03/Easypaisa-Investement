@@ -63,7 +63,7 @@ class InvestmentController extends Controller
         }
 
         // check if user take today profit already
-        $daily_profit = GivenProfit::where('user_id',auth()->user()->id)->where('status','daily_profit')->whereDate('created_at',Carbon::today());
+        $daily_profit = GivenProfit::where('user_id',auth()->user()->id)->whereDate('created_at',Carbon::today())->first();
         if($daily_profit == null)
         {
             $profit = $investment * 10 / 100;
@@ -82,7 +82,7 @@ class InvestmentController extends Controller
         }
         else
         {
-            return redirect()->with('error','You have been recived today reward');
+            return redirect()->back()->with('error','You have been received today reward');
         }
 
     }

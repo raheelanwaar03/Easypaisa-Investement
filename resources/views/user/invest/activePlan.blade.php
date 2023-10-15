@@ -62,6 +62,9 @@
 </head>
 
 <body style="background-color: #eee !important;height: 740px;">
+
+<x-alert />
+
     <div class="container" style="border: 0px solid red;background-color: #eee !important;">
         <div class="topnav">
             <a href="#"
