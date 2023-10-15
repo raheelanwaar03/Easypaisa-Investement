@@ -55,6 +55,34 @@ class InvestmentController extends Controller
 
     public function dailyProfit()
     {
+        // check the user status open day
+
+        $buy_plan = BuyPlan::where('user_id',auth()->user()->id)->where('status','approved')->latest();
+        if($buy_plan == null)
+        {
+            return redirect()->back()->with('error','you have not invest in any plan yet');
+        }
+        else
+        {
+            $twoDaysAgo = Carbon::now()->subDays(2);
+
+            $buy_plan = BuyPlan::where('user_id',auth()->user()->id)->where('status','approved')->whereDate('created_at','<',$twoDaysAgo)->first();
+            if($buy_plan !== null)
+            {
+                $user = User::where('referral',auth()->user()->email)->whereDate('created_at','<',$twoDaysAgo)->get();
+                if($user == null)
+                {
+                    return redirect()->back()->with('error','Add more members in your team to get your daily bouns');
+                }
+
+            }
+            // check if user refer someone in two days or not
+        }
+
+
+
+
+
         $plans = BuyPlan::where('user_id',auth()->user()->id)->where('status','approved')->get();
         $investment = 0;
         foreach($plans as $plan)
