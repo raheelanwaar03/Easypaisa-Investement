@@ -6,7 +6,9 @@ use App\Http\Controllers\Controller;
 use App\Models\admin\Plans;
 use App\Models\User;
 use App\Models\User\BuyPlan;
+use App\Models\user\GivenProfit;
 use App\Models\User\Wallet;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class InvestmentController extends Controller
@@ -59,14 +61,30 @@ class InvestmentController extends Controller
         {
             $investment += $plan->plan_investment;
         }
-        // 10 % commission of investment
-        $profit = $investment * 10 / 100;
 
-        $wallet = new Wallet();
-        $wallet->user_id = auth()->user()->id;
-        $wallet->wallet += $profit;
-        $wallet->save();
-        return redirect()->back()->with('success','you have got your 10% commission on your investment');
+        // check if user take today profit already
+        $daily_profit = GivenProfit::where('user_id',auth()->user()->id)->where('status','daily_profit')->whereDate('created_at',Carbon::today());
+        if($daily_profit == null)
+        {
+            $profit = $investment * 10 / 100;
+
+            $wallet = new Wallet();
+            $wallet->user_id = auth()->user()->id;
+            $wallet->wallet += $profit;
+            $wallet->save();
+
+            $today_profit = new GivenProfit();
+            $today_profit->user_id = auth()->user()->id;
+            $today_profit->profit = $profit;
+            $today_profit->save();
+
+            return redirect()->back()->with('success','you have got your 10% commission on your investment');
+        }
+        else
+        {
+            return redirect()->with('error','You have been recived today reward');
+        }
+
     }
 
     public function convert()
