@@ -127,7 +127,7 @@
             <div class="dlabnav-scroll">
 
                 <ul class="metismenu" id="menu">
-                    <li><a class="has-arrow " href="javascript:void()" aria-expanded="false">
+                    <li><a class="has-arrow" href="{{route('Admin.Dashboard')}}">
                             <div class="menu-icon">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -142,18 +142,9 @@
                             </div>
                             <span class="nav-text">Dashboard</span>
                         </a>
-                        <ul aria-expanded="false">
-                            <li><a href="index.html">Dashboard Light</a></li>
-                            <li><a href="balance-page.html">Balance Page</a></li>
-                            <li><a href="card-center.html">Card Center</a></li>
-                            <li><a href="invoices.html">Invoices</a></li>
-                            <li><a href="transaction-details.html">Transaction Details</a></li>
-                            <li><a href="transaction-history.html">Transaction History</a></li>
-
-                        </ul>
                     </li>
 
-                    <li><a class="has-arrow " href="javascript:void()" aria-expanded="false">
+                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">
                             <div class="menu-icon">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -191,15 +182,10 @@
                                     </g>
                                 </svg>
                             </div>
-                            <span class="nav-text">Charts</span>
+                            <span class="nav-text">Users</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="chart-flot.html">Flot</a></li>
-                            <li><a href="chart-morris.html">Morris</a></li>
-                            <li><a href="chart-chartjs.html">Chartjs</a></li>
-                            <li><a href="chart-chartist.html">Chartist</a></li>
-                            <li><a href="chart-sparkline.html">Sparkline</a></li>
-                            <li><a href="chart-peity.html">Peity</a></li>
+                            <li><a href="{{ route('Admin.Pending.Users') }}">Pending Users</a></li>
                         </ul>
                     </li>
                     <li><a class="has-arrow " href="javascript:void()" aria-expanded="false">

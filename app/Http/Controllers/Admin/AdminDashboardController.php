@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class AdminDashboardController extends Controller
@@ -11,4 +12,11 @@ class AdminDashboardController extends Controller
     {
         return view('admin.dashboard');
     }
+
+    public function pending()
+    {
+        $users = User::where('status','pending')->get();
+        return view('admin.user.pending',compact('users'));
+    }
+
 }
