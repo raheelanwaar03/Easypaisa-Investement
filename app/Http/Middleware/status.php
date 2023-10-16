@@ -16,19 +16,16 @@ class status
     public function handle(Request $request, Closure $next): Response
     {
 
-        if(auth()->user()->status == 'approved')
-        {
-            return redirect(route('User.Dashboard'));
+        if (auth()->user()->role == 'user') {
+            if (auth()->user()->status == 'approved') {
+                return redirect(route('User.Dashboard'));
+            }
+            if (auth()->user()->status == 'pending') {
+                return redirect(url('/'));
+            }
         }
-        elseif(auth()->user()->status == 'pending')
-        {
-            return redirect(url('/'))->with('error','Wait for your accoount approvel');
+        if (auth()->user()->status == 'admin') {
+            return redirect()->route('Admin.Dashboard')->with('success', 'Welcome to admin dashboard');
         }
-        elseif(auth()->user()->status == 'rejected')
-        {
-            return redirect(route('verification.page'))->with('error','Your account has been rejected please resubmit your form with correct details');
-
-        }
-
     }
 }

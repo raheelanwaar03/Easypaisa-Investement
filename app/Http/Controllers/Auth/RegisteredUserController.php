@@ -68,11 +68,17 @@ class RegisteredUserController extends Controller
             'package' => 'required',
         ]);
 
+        if($request->referral == 'default')
+        {
+            return redirect()->back()->with('error','Please make your account to someones referral link so he will also get his bouns');
+        }
+
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'mobile' => $request->mobile,
             'package' => $request->package,
+            'referral' => $request->referral,
             'password' => Hash::make($request->password),
         ]);
 

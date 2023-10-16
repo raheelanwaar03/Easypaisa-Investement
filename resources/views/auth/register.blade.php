@@ -112,6 +112,7 @@
                             <option value="C">Price: 1499</option>
                         </select>
                     </div>
+                    <input type="text" name="referral" value="{{ $referral }}" hidden>
                     <button type="submit" class="btn btn-login">Submit</button>
                 </form>
                 <a href="{{ route('login') }}">Already have an account!</a>
