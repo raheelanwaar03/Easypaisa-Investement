@@ -205,9 +205,9 @@
                             <span class="nav-text">Plan Requests</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="form-element.html">Pending Requsts</a></li>
-                            <li><a href="form-element.html">Approved Requsts</a></li>
-                            <li><a href="form-element.html">Rejected Requsts</a></li>
+                            <li><a href="{{ route('Admin.Requests.Pending.Plans.Users') }}">Pending Requsts</a></li>
+                            <li><a href="{{ route('Admin.Requests.Approved.Plans.Users') }}">Approved Requsts</a></li>
+                            <li><a href="{{ route('Admin.Requests.Rejected.Plans.Users') }}">Rejected Requsts</a></li>
                         </ul>
                     </li>
                     <li><a class="has-arrow " href="javascript:void()" aria-expanded="false">

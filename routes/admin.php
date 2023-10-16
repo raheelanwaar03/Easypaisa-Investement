@@ -20,5 +20,11 @@ Route::prefix('Admin/')->name('Admin.')->middleware('auth', 'admin')->group(func
     Route::get('Edit/Plan/{id}',[PlansController::class,'edit'])->name('Edit.Plan');
     Route::post('Update/Plan/{id}',[PlansController::class,'update'])->name('Update.Plan');
     Route::post('Store/Plans',[PlansController::class,'store'])->name('Store.Plans');
+    Route::get('Users/Pending/Buy/Plan/Requests',[PlansController::class,'pendingRequests'])->name('Requests.Pending.Plans.Users');
+    Route::get('Users/Approved/Buy/Plan/Requests',[PlansController::class,'approvedRequests'])->name('Requests.Approved.Plans.Users');
+    Route::get('Users/Rejected/Buy/Plan/Requests',[PlansController::class,'rejectedRequests'])->name('Requests.Rejected.Plans.Users');
+    Route::get('Make/Plan/Requests/Pending/{id}',[PlansController::class,'pendingRequest'])->name('Make.Buy.Request.Pending');
+    Route::get('Make/Plan/Requests/Approved/{id}',[PlansController::class,'approveRequest'])->name('Make.Buy.Request.Approved');
+    Route::get('Make/Plan/Requests/Rejeted/{id}',[PlansController::class,'rejectedRequest'])->name('Make.Buy.Request.Rejected');
 
 });
