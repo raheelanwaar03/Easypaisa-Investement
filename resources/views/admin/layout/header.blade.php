@@ -255,6 +255,7 @@
                             <li><a href="{{ route('Admin.Verification.Text') }}">Verification Text</a></li>
                             <li><a href="{{ route('Admin.All.Levels') }}">Level Setting</a></li>
                             <li><a href="{{ route('Admin.Widthraw.Limits') }}">Widthraw Limites</a></li>
+                            <li><a href="{{ route('Admin.All.Home.Plans') }}">Home Plans Details</a></li>
                         </ul>
                     </li>
                 </ul>

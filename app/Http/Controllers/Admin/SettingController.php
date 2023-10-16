@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\user\EasyPaisaMangement;
+use App\Models\user\PlanDetails;
 use App\Models\user\ReferalLevel;
 use App\Models\user\Setting;
 use App\Models\user\verificationText;
@@ -107,6 +108,25 @@ class SettingController extends Controller
         return redirect()->back()->with('success','Easypaisa details updated');
     }
 
+    public function homePlans()
+    {
+        $plans = PlanDetails::where('status',1)->get();
+        return view('admin.setting.plan.all',compact('plans'));
+    }
 
+    public function editPlan($id)
+    {
+        $plan = PlanDetails::find($id);
+        return view('admin.setting.plan.edit',compact('plan'));
+    }
+
+    public function updatePlan(Request $request,$id)
+    {
+        $plan = PlanDetails::find($id);
+        $plan->plan_name = $request->plan_name;
+        $plan->details = $request->details;
+        $plan->save();
+        return redirect()->back()->with('success','Plans details updated');
+    }
 
 }

@@ -8,23 +8,25 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">Verification Page Text</h4>
+                            <h4 class="card-title">All Plans</h4>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table id="example" class="display" style="min-width: 845px">
                                     <thead>
                                         <tr>
-                                            <th>Text</th>
+                                            <th>Plan Name</th>
+                                            <th>Plan Details</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($texts as $text)
+                                        @foreach ($plans as $plan)
                                             <tr>
-                                                <td>{{ $text->text }}</td>
+                                                <td>{{ $plan->plan_name }}</td>
+                                                <td>{{ $plan->details }}</td>
                                                 <td>
-                                                    <a href="{{ route('Admin.Edit.Verification.Text', ['id' => $text->id]) }}"
+                                                    <a href="{{ route('Admin.Edit.Home.Plan', ['id' => $plan->id]) }}"
                                                         class="btn btn-sm btn-primary">Edit</a>
                                                 </td>
                                             </tr>
