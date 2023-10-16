@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\TrxID;
 use App\Models\User;
+use App\Models\user\verificationText;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
@@ -26,7 +27,8 @@ class RegisteredUserController extends Controller
 
     public function verfication()
     {
-        return view('auth.verification');
+        $text = verificationText::where('status',1)->first();
+        return view('auth.verification',compact('text'));
     }
 
     public function package()

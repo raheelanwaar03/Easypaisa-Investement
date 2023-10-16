@@ -61,7 +61,7 @@
                         </div>
                         <div class="card-body">
                             <h4>To activat this plan you have to pay {{ $plan->investment }} on this number
-                                (0300-1234567) our account name will be (Account Name). If you did'nt send exact amount your plan will not be activated. In {{ $plan->duration }} days you got {{ $plan->total_profit }} total
+                                ({{ $esaypaisa->esay_num }}) our account name will be ({{ $easypaisa->easy_name }}). If you did'nt send exact amount your plan will not be activated. In {{ $plan->duration }} days you got {{ $plan->total_profit }} total
                                 profit.</h4>
                                 <form action="{{ route('User.Store.Plan',['id'=>$plan->id]) }}" method="POST" style="margin-top: 40px">
                                     @csrf

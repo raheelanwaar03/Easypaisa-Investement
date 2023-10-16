@@ -76,8 +76,7 @@
                     <img src="your-logo.png" alt="Your Logo">
                 </div>
                 <h2>Verification Page</h2>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid cumque neque dolorem, molestiae
-                    alias magni ullam quos, eligendi blanditiis aut ad quae reprehenderit, aspernatur doloribus.</p>
+                <p>{{ $text->text }}</p>
                     <center>
                         <a href="{{ url('/') }}" class="btn btn-login"> Home</a>
                     </center>

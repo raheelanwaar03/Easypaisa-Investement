@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\admin\Plans;
 use App\Models\User;
 use App\Models\User\BuyPlan;
+use App\Models\user\EasyPaisaMangement;
 use App\Models\user\GivenProfit;
 use App\Models\User\Wallet;
 use Carbon\Carbon;
@@ -22,7 +23,8 @@ class InvestmentController extends Controller
     public function buyPlan($id)
     {
         $plan = Plans::find($id);
-        return view('user.invest.buyPlan',compact('plan'));
+        $easypaisa = EasyPaisaMangement::where('status',1)->first();
+        return view('user.invest.buyPlan',compact('plan','esaypaisa'));
     }
 
     public function storePlan(Request $request,$id)
