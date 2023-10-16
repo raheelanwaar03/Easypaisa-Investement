@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use App\Models\user\ReferalLevel;
 use App\Models\user\Setting;
+use App\Models\user\verificationText;
 use Illuminate\Http\Request;
 
 class SettingController extends Controller
@@ -50,6 +51,12 @@ class SettingController extends Controller
     {
         $limite = Setting::find($id);
         return view('admin.setting.widthraw.editlimite',compact('limite'));
+    }
+
+    public function text()
+    {
+        $texts = verificationText::where('status',1)->get();
+        return view('admin.setting.text.index',compact('texts'));
     }
 
 
