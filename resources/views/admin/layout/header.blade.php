@@ -251,8 +251,10 @@
                             <span class="nav-text">Settings</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="table-bootstrap-basic.html">Easypaisa Number</a></li>
-                            <li><a href="table-bootstrap-basic.html">Main Page Text</a></li>
+                            <li><a href="{{ route('Admin.Easypaisa.Num') }}">Easypaisa Number</a></li>
+                            <li><a href="{{ route('Admin.Verification.Text') }}">Verification Text</a></li>
+                            <li><a href="{{ route('Admin.All.Levels') }}">Level Setting</a></li>
+                            <li><a href="{{ route('Admin.Widthraw.Limits') }}">Widthraw Limites</a></li>
                         </ul>
                     </li>
                 </ul>
