@@ -21,6 +21,8 @@
         rel="stylesheet">
     <link href="{{ asset('admin/vendor/jquery-autocomplete/jquery-ui.css') }}') }}" rel="stylesheet">
 
+    <link href="{{ asset('admin/vendor/datatables/css/jquery.dataTables.min.css') }}" rel="stylesheet">
+
     <!-- Style css -->
 
     <link href="{{ asset('admin/css/style.css') }}" rel="stylesheet">
@@ -75,7 +77,7 @@
             Nav header start
         ***********************************-->
         <div class="nav-header">
-            <a href="index.html" class="brand-logo">
+            <a href="{{ route('Admin.Dashboard') }}" class="brand-logo">
                 <div class="logo">
                     <svg class="logo-abbr" width="43" height="34" viewBox="0 0 43 34" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
@@ -158,7 +160,7 @@
                         </a>
                         <ul aria-expanded="false">
                             <li><a href="{{ route('Admin.Add.Plans') }}">Add Plan</a></li>
-                            <li><a href="{{ route('Admin.Add.Plans') }}">All Plans</a></li>
+                            <li><a href="{{ route('Admin.All.Plans') }}">All Plans</a></li>
                         </ul>
                     </li>
                     <li><a class="has-arrow " href="javascript:void()" aria-expanded="false">
@@ -183,8 +185,8 @@
                         </a>
                         <ul aria-expanded="false">
                             <li><a href="{{ route('Admin.Pending.Users') }}">Pending Users</a></li>
-                            <li><a href="{{ route('Admin.Pending.Users') }}">Approved Users</a></li>
-                            <li><a href="{{ route('Admin.Pending.Users') }}">Rejected Users</a></li>
+                            <li><a href="{{ route('Admin.Approved.Users') }}">Approved Users</a></li>
+                            <li><a href="{{ route('Admin.Rejected.Users') }}">Rejected Users</a></li>
                         </ul>
                     </li>
                     <li><a class="has-arrow " href="javascript:void()" aria-expanded="false">

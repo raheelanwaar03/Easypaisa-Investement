@@ -31,4 +31,29 @@ class PlansController extends Controller
         return redirect()->back()->with('success','Plan added successfully');
     }
 
+    public function all()
+    {
+        $plans = Plans::get();
+        return view('admin.plans.all',compact('plans'));
+    }
+
+    public function edit($id)
+    {
+        $plan = Plans::find($id);
+        return view('admin.plans.edit',compact('plan'));
+    }
+
+    public function update(Request $request,$id)
+    {
+        $plan = Plans::find($id);
+        $plan->name = $request->name;
+        $plan->investment = $request->investment;
+        $plan->duration = $request->duration;
+        $plan->total_profit = $request->total_profit;
+        $plan->save();
+        return redirect()->back()->with('success','Plan details has updated successfully');
+    }
+
+
+
 }

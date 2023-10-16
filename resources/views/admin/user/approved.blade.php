@@ -8,7 +8,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">Pending Users</h4>
+                            <h4 class="card-title">Approved Users</h4>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -34,10 +34,10 @@
                                                 <td>1231232323</td>
                                                 <td>{{ $user->status }}</td>
                                                 <td>
-                                                    <a href="{{ route('Admin.Make.User.Approve', ['id' => $user->id]) }}"
-                                                        class="btn btn-sm btn-success">Approve</a>
-                                                        <a href="{{ route('Admin.Make.User.Reject', ['id' => $user->id]) }}"
-                                                            class="btn btn-sm btn-danger">Reject</a>
+                                                    <a href="{{ route('Admin.Make.User.Pending', ['id' => $user->id]) }}"
+                                                        class="btn btn-sm btn-primary">Pending</a>
+                                                    <a href="{{ route('Admin.Make.User.Reject', ['id' => $user->id]) }}"
+                                                        class="btn btn-sm btn-danger">Reject</a>
                                                 </td>
                                             </tr>
                                         @endforeach

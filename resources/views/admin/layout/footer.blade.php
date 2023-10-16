@@ -3,6 +3,10 @@
 <script src="{{ asset('admin/vendor/global/global.min.js') }}"></script>
 <script src="{{ asset('admin/vendor/chart.js/Chart.bundle.min.js') }}"></script>
 <script src="{{ asset('admin/vendor/jquery-nice-select/js/jquery.nice-select.min.js') }}"></script>
+
+<script src="{{ asset('admin/vendor/datatables/js/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('admin/js/plugins-init/datatables.init.js') }}"></script>
+
 <!-- Apex Chart -->
 <script src="{{ asset('admin/vendor/apexchart/apexchart.js') }}"></script>
 <!-- Chart piety plugin files -->

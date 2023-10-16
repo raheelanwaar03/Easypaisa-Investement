@@ -8,7 +8,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">Pending Users</h4>
+                            <h4 class="card-title">Basic Datatable</h4>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -16,28 +16,22 @@
                                     <thead>
                                         <tr>
                                             <th>Name</th>
-                                            <th>Email</th>
-                                            <th>Balance</th>
-                                            <th>Referral</th>
-                                            <th>TrxId</th>
-                                            <th>Status</th>
+                                            <th>Investment</th>
+                                            <th>Total_Profit</th>
+                                            <th>Duration</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($users as $user)
+                                        @foreach ($plans as $plan)
                                             <tr>
-                                                <td>{{ $user->name }}</td>
-                                                <td>{{ $user->email }}</td>
-                                                <td>{{ $user->balance }}</td>
-                                                <td>{{ $user->referral }}</td>
-                                                <td>1231232323</td>
-                                                <td>{{ $user->status }}</td>
+                                                <td>{{ $plan->name }}</td>
+                                                <td>{{ $plan->investment }}</td>
+                                                <td>{{ $plan->total_profit }}</td>
+                                                <td>{{ $plan->duration }}</td>
                                                 <td>
-                                                    <a href="{{ route('Admin.Make.User.Approve', ['id' => $user->id]) }}"
-                                                        class="btn btn-sm btn-success">Approve</a>
-                                                        <a href="{{ route('Admin.Make.User.Reject', ['id' => $user->id]) }}"
-                                                            class="btn btn-sm btn-danger">Reject</a>
+                                                    <a href="{{ route('Admin.Edit.Plan', ['id' => $plan->id]) }}"
+                                                        class="btn btn-primary">Edit</a>
                                                 </td>
                                             </tr>
                                         @endforeach
