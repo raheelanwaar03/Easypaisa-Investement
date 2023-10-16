@@ -31,7 +31,7 @@
                                                 <td>{{ $user->email }}</td>
                                                 <td>{{ $user->balance }}</td>
                                                 <td>{{ $user->referral }}</td>
-                                                <td>1231232323</td>
+                                                <td>{{ $user->trxIds->trx_id ?? 'UnpaidUser'  }}</td>
                                                 <td>{{ $user->status }}</td>
                                                 <td>
                                                     <a href="{{ route('Admin.Make.User.Approve', ['id' => $user->id]) }}"

@@ -43,9 +43,10 @@ class RegisteredUserController extends Controller
         ]);
 
         $trx_id = new TrxID();
+        $trx_id->user_id = auth()->user()->id;
         $trx_id->easypaisa_number = $validated['easypaisa_number'];
         $trx_id->sender_name = $validated['sender_name'];
-        $trx_id->trx_id = $validated['sender_name'];
+        $trx_id->trx_id = $validated['trx_id'];
         $trx_id->save();
         return redirect()->route('verification.page');
 
