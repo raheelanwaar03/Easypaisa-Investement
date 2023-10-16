@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use App\Models\admin\Plans;
 use App\Models\User;
 use App\Models\user\EasyPaisaMangement;
+use App\Models\user\PlanDetails;
 use App\Models\user\ReferalLevel;
 use App\Models\user\Setting;
 use App\Models\user\verificationText;
@@ -42,6 +43,25 @@ class clean extends Command
         $easyPaisa = new EasyPaisaMangement();
         $easyPaisa->easy_name = 'test';
         $easyPaisa->easy_num = '9999999999';
+        $easyPaisa->status = 1;
+        $easyPaisa->save();
+
+        // Plan Details
+        $easyPaisa = new PlanDetails();
+        $easyPaisa->plan_name = 'First Plan';
+        $easyPaisa->details = 'In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available';
+        $easyPaisa->status = 1;
+        $easyPaisa->save();
+
+        $easyPaisa = new PlanDetails();
+        $easyPaisa->plan_name = 'Second Plan';
+        $easyPaisa->details = 'In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available';
+        $easyPaisa->status = 1;
+        $easyPaisa->save();
+
+        $easyPaisa = new PlanDetails();
+        $easyPaisa->plan_name = 'Third Plan';
+        $easyPaisa->details = 'In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available';
         $easyPaisa->status = 1;
         $easyPaisa->save();
 
