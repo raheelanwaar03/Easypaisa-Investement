@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\user\EasyPaisaMangement;
 use App\Models\user\ReferalLevel;
 use App\Models\user\Setting;
 use App\Models\user\verificationText;
@@ -53,10 +54,57 @@ class SettingController extends Controller
         return view('admin.setting.widthraw.editlimite',compact('limite'));
     }
 
+    public function updateLimite(Request $request,$id)
+    {
+        $limite = Setting::find($id);
+        $limite->mini_widthraw = $request->mini_widthraw;
+        $limite->max_widthraw = $request->max_widthraw;
+        $limite->planA = $request->planA;
+        $limite->planB = $request->planB;
+        $limite->planC = $request->planC;
+        $limite->save();
+        return redirect()->back()->with('success','Limite updated successfully');
+    }
+
     public function text()
     {
         $texts = verificationText::where('status',1)->get();
         return view('admin.setting.text.index',compact('texts'));
+    }
+
+    public function editText($id)
+    {
+        $text = verificationText::find($id);
+        return view('admin.setting.text.edit',compact('text'));
+    }
+
+    public function updateText(Request $request,$id)
+    {
+        $text = verificationText::find($id);
+        $text->text = $request->text;
+        $text->save();
+        return redirect()->back()->with('success','Text updated successfully');
+    }
+
+    public function easypaisa()
+    {
+        $easypaisa = EasyPaisaMangement::where('status',1)->get();
+        return view('admin.setting.easypaisa.index',compact('easypaisa'));
+    }
+
+    public function editEasypaisa($id)
+    {
+        $easypaisa = EasyPaisaMangement::find($id);
+        return view('admin.setting.easypaisa.edit',compact('easypaisa'));
+    }
+
+    public function updateEasypaisa(Request $request,$id)
+    {
+        $easypaisa = EasyPaisaMangement::find($id);
+        $easypaisa->easy_num = $request->esay_num;
+        $easypaisa->easy_name = $request->esay_name;
+        $easypaisa->sava();
+        return redirect()->back()->with('success','Easypaisa details updated');
     }
 
 
