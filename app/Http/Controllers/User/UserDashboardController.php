@@ -37,10 +37,8 @@ class UserDashboardController extends Controller
         $check_request = WidthrawReq::where('user_id',auth()->user()->id)->where('status','pending')->first();
         if($check_request != null)
         {
-            return redirect()->back()->with('error','Wait for your first request to approve or reject then you can request for more widthraw');
+            return redirect()->back()->with('error','Wait for your first request to approve then you can request for more widthraw');
         }
-
-
 
         $widthraw = new WidthrawReq();
         $widthraw->user_id = auth()->user()->id;
