@@ -4,6 +4,10 @@ namespace App\Console\Commands;
 
 use App\Models\admin\Plans;
 use App\Models\User;
+use App\Models\user\EasyPaisaMangement;
+use App\Models\user\ReferalLevel;
+use App\Models\user\Setting;
+use App\Models\user\verificationText;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Hash;
@@ -35,46 +39,44 @@ class clean extends Command
         Artisan::call('view:clear');
         Artisan::call('route:clear');
 
-        // $easyPaisa = new EasyPaisaMangement();
-        // $easyPaisa->easy_name = 'test';
-        // $easyPaisa->easy_num = '9999999999';
-        // $easyPaisa->text = 'Payment page text from admin';
-        // $easyPaisa->status = 1;
-        // $easyPaisa->save();
+        $easyPaisa = new EasyPaisaMangement();
+        $easyPaisa->easy_name = 'test';
+        $easyPaisa->easy_num = '9999999999';
+        $easyPaisa->status = 1;
+        $easyPaisa->save();
 
-        // // Referal limite
-        // $setting = new Setting();
-        // $setting->minimum_amount = '50';
-        // $setting->maximun_amount = '500';
-        // $setting->dollar_rate = '287';
-        // $setting->silver = '10';
-        // $setting->gold = '20';
-        // $setting->dimond = '30';
-        // $setting->status = 1;
-        // $setting->save();
+        // Referal limite
+        $setting = new Setting();
+        $setting->min_widthraw = '50';
+        $setting->maximun_amount = '500';
+        $setting->planA = '10';
+        $setting->planB = '20';
+        $setting->planC = '30';
+        $setting->status = 1;
+        $setting->save();
 
         // Verification page text
 
-        // $verificationText = new verificationText();
-        // $verificationText->text = 'Welcome to MoviesPay website we will approve your account after checking your given details';
-        // $verificationText->status = 1;
-        // $verificationText->save();
+        $verificationText = new verificationText();
+        $verificationText->text = 'Welcome to MoviesPay website we will approve your account after checking your given details';
+        $verificationText->status = 1;
+        $verificationText->save();
 
         //    set level according to thier referal
 
-        // $level = new ReferalLevel();
-        // $level->level1 = 1;
-        // $level->level2 = 2;
-        // $level->level3 = 3;
-        // $level->level4 = 4;
-        // $level->level5 = 5;
-        // $level->level6 = 6;
-        // $level->level7 = 7;
-        // $level->level8 = 8;
-        // $level->level9 = 9;
-        // $level->level10 = 10;
-        // $level->status = 1;
-        // $level->save();
+        $level = new ReferalLevel();
+        $level->level1 = 10;
+        $level->level2 = 20;
+        $level->level3 = 30;
+        $level->level4 = 40;
+        $level->level5 = 50;
+        $level->level6 = 60;
+        $level->level7 = 70;
+        $level->level8 = 80;
+        $level->level9 = 90;
+        $level->level10 = 100;
+        $level->status = 1;
+        $level->save();
 
         $plan = new Plans();
         $plan->name = 'first';
