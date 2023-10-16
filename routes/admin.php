@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\Admin\PlansController;
+use App\Http\Controllers\admin\WidthrawRequestsController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -26,5 +27,8 @@ Route::prefix('Admin/')->name('Admin.')->middleware('auth', 'admin')->group(func
     Route::get('Make/Plan/Requests/Pending/{id}',[PlansController::class,'pendingRequest'])->name('Make.Buy.Request.Pending');
     Route::get('Make/Plan/Requests/Approved/{id}',[PlansController::class,'approveRequest'])->name('Make.Buy.Request.Approved');
     Route::get('Make/Plan/Requests/Rejeted/{id}',[PlansController::class,'rejectedRequest'])->name('Make.Buy.Request.Rejected');
-
+    // Widthraw Requests
+    Route::get('Pending/Widthraw/Requests',[WidthrawRequestsController::class,'pending'])->name('Pending.Widthraw');
+    Route::get('Approved/Widthraw/Requests',[WidthrawRequestsController::class,'approved'])->name('Approved.Widthraw');
+    Route::get('Rejected/Widthraw/Requests',[WidthrawRequestsController::class,'rejected'])->name('Rejected.Widthraw');
 });
