@@ -10,6 +10,10 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('Admin/')->name('Admin.')->middleware('auth', 'admin')->group(function () {
 
     Route::get('Dashboard',[AdminDashboardController::class,'index'])->name('Dashboard');
+    // Edit user
+    Route::get('User/Details/{id}',[AdminDashboardController::class,'editUser'])->name('Edit.User');
+    Route::post('Update/User/Details/{id}',[AdminDashboardController::class,'updateUser'])->name('Update.User.Details');
+
     Route::get('Pending/Users',[AdminDashboardController::class,'pending'])->name('Pending.Users');
     Route::get('Approved/Users',[AdminDashboardController::class,'approved'])->name('Approved.Users');
     Route::get('Rejected/Users',[AdminDashboardController::class,'rejected'])->name('Rejected.Users');

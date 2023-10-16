@@ -36,8 +36,10 @@
                                                 <td>
                                                     <a href="{{ route('Admin.Make.User.Approve', ['id' => $user->id]) }}"
                                                         class="btn btn-sm btn-success">Approve</a>
-                                                        <a href="{{ route('Admin.Make.User.Reject', ['id' => $user->id]) }}"
-                                                            class="btn btn-sm btn-danger">Reject</a>
+                                                    <a href="{{ route('Admin.Make.User.Reject', ['id' => $user->id]) }}"
+                                                        class="btn btn-sm btn-danger">Reject</a>
+                                                    <a href="{{ route('Admin.Edit.User', ['id' => $user->id]) }}"
+                                                        class="btn btn-sm btn-success">Edit</a>
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -48,8 +50,8 @@
                     </div>
                 </div>
                 <!--**********************************
-                                        Footer start
-                                    ***********************************-->
+                                            Footer start
+                                        ***********************************-->
                 <div class="footer">
                     <div class="copyright">
                         <p>Copyright © Designed &amp; Developed by <a href="#">
@@ -57,8 +59,8 @@
                     </div>
                 </div>
                 <!--**********************************
-                                        Footer end
-                                    ***********************************-->
+                                            Footer end
+                                        ***********************************-->
 
             </div>
         </div>
