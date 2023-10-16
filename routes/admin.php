@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\Admin\PlansController;
+use App\Http\Controllers\admin\SettingController;
 use App\Http\Controllers\admin\WidthrawRequestsController;
 use Illuminate\Support\Facades\Route;
 
@@ -38,4 +39,17 @@ Route::prefix('Admin/')->name('Admin.')->middleware('auth', 'admin')->group(func
     Route::get('Make/Widthraw/Pending/{id}',[WidthrawRequestsController::class,'makePending'])->name('Make.Pending.Widthraw');
     Route::get('Make/Widthraw/Approved/{id}',[WidthrawRequestsController::class,'makeApproved'])->name('Make.Approved.Widthraw');
     Route::get('Make/Widthraw/Rejected/{id}',[WidthrawRequestsController::class,'makeRejected'])->name('Make.Rejected.Widthraw');
+
+    // Setting routes
+
+    // Level setting routes
+    Route::get('Level/Setting',[SettingController::class,'allLevels'])->name('All.Levels');
+    Route::get('Edit/Level/Setting/{id}',[SettingController::class,'editLevel'])->name('Edit.Level');
+    Route::post('Update/Level/Setting/{id}',[SettingController::class,'updateLevel'])->name('Update.Level');
+    // Widthraw Limites
+    Route::get('Widthraw/Limits',[SettingController::class,'widthrawLimites'])->name('Widthraw.Limits');
+    Route::get('Edit/Widthraw/Limit/{id}',[SettingController::class,'editWidthrawLimites'])->name('Edit.Widthraw.Limit');
+    Route::post('Update/Widthraw/Limit/{id}',[SettingController::class,'updateWidthrawLimites'])->name('Update.Widthraw.Limit');
+
+
 });

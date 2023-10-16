@@ -8,30 +8,32 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">All Plans With Details</h4>
+                            <h4 class="card-title">Widthraw & Refer Limites</h4>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table id="example" class="display" style="min-width: 845px">
                                     <thead>
                                         <tr>
-                                            <th>Name</th>
-                                            <th>Investment</th>
-                                            <th>Total_Profit</th>
-                                            <th>Duration</th>
+                                            <th>Minimum Widthraw</th>
+                                            <th>Maximum Widthraw</th>
+                                            <th>Plan A</th>
+                                            <th>Plan B</th>
+                                            <th>Plan C</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($plans as $plan)
+                                        @foreach ($limites as $limit)
                                             <tr>
-                                                <td>{{ $plan->name }}</td>
-                                                <td>{{ $plan->investment }}</td>
-                                                <td>{{ $plan->total_profit }}</td>
-                                                <td>{{ $plan->duration }}</td>
+                                                <td>{{ $limit->min_widthraw }}</td>
+                                                <td>{{ $limit->max_widthraw }}</td>
+                                                <td>{{ $limit->planA }}</td>
+                                                <td>{{ $limit->planB }}</td>
+                                                <td>{{ $limit->planC }}</td>
                                                 <td>
-                                                    <a href="{{ route('Admin.Edit.Plan', ['id' => $plan->id]) }}"
-                                                        class="btn btn-primary">Edit</a>
+                                                    <a href="{{ route('Admin.Edit.Widthraw.Limit', ['id' => $limit->id]) }}"
+                                                        class="btn btn-sm btn-primary">Edit</a>
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -42,8 +44,8 @@
                     </div>
                 </div>
                 <!--**********************************
-                                        Footer start
-                                    ***********************************-->
+                                            Footer start
+                                        ***********************************-->
                 <div class="footer">
                     <div class="copyright">
                         <p>Copyright © Designed &amp; Developed by <a href="#">
@@ -51,8 +53,8 @@
                     </div>
                 </div>
                 <!--**********************************
-                                        Footer end
-                                    ***********************************-->
+                                            Footer end
+                                        ***********************************-->
 
             </div>
         </div>
