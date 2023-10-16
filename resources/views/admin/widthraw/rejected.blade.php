@@ -15,27 +15,27 @@
                                 <table id="example" class="display" style="min-width: 845px">
                                     <thead>
                                         <tr>
-                                            <th>Plan Name</th>
-                                            <th>Investment</th>
-                                            <th>Sender Name</th>
-                                            <th>Sender Number</th>
-                                            <th>Trx Id</th>
+                                            <th>Receiver Name</th>
+                                            <th>Receiver Number</th>
+                                            <th>Bank Type</th>
+                                            <th>Widthraw Amount</th>
+                                            <th>Status</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($requests as $request)
+                                        @foreach ($widthraws as $request)
                                             <tr>
-                                                <td>{{ $request->plan_name }}</td>
-                                                <td>{{ $request->plan_investment }}</td>
-                                                <td>{{ $request->name }}</td>
-                                                <td>{{ $request->number }}</td>
-                                                <td>{{ $request->trxId }}</td>
+                                                <td>{{ $request->user_name }}</td>
+                                                <td>{{ $request->account }}</td>
+                                                <td>{{ $request->type }}</td>
+                                                <td>{{ $request->amount }}</td>
+                                                <td>{{ $request->status }}</td>
                                                 <td>
-                                                    <a href="{{ route('Admin.Make.Buy.Request.Approved', ['id' => $request->id]) }}"
-                                                        class="btn btn-sm btn-success">Approved</a>
-                                                        <a href="{{ route('Admin.Make.Buy.Request.Rejected', ['id' => $request->id]) }}"
-                                                            class="btn btn-sm btn-danger">Rejected</a>
+                                                    <a href="{{ route('Admin.Make.Pending.Widthraw', ['id' => $request->id]) }}"
+                                                        class="btn btn-sm btn-primary">Pending</a>
+                                                        <a href="{{ route('Admin.Make.Approved.Widthraw', ['id' => $request->id]) }}"
+                                                            class="btn btn-sm btn-success">Approve</a>
                                                 </td>
                                             </tr>
                                         @endforeach

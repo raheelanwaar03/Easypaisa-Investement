@@ -31,4 +31,7 @@ Route::prefix('Admin/')->name('Admin.')->middleware('auth', 'admin')->group(func
     Route::get('Pending/Widthraw/Requests',[WidthrawRequestsController::class,'pending'])->name('Pending.Widthraw');
     Route::get('Approved/Widthraw/Requests',[WidthrawRequestsController::class,'approved'])->name('Approved.Widthraw');
     Route::get('Rejected/Widthraw/Requests',[WidthrawRequestsController::class,'rejected'])->name('Rejected.Widthraw');
+    Route::get('Make/Widthraw/Pending/{id}',[WidthrawRequestsController::class,'makePending'])->name('Make.Pending.Widthraw');
+    Route::get('Make/Widthraw/Approved/{id}',[WidthrawRequestsController::class,'makeApproved'])->name('Make.Approved.Widthraw');
+    Route::get('Make/Widthraw/Rejected/{id}',[WidthrawRequestsController::class,'makeRejected'])->name('Make.Rejected.Widthraw');
 });
