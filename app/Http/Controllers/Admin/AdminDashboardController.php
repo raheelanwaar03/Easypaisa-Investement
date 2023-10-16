@@ -29,7 +29,7 @@ class AdminDashboardController extends Controller
 
     public function pending()
     {
-        $users = User::where('status','pending')->get();
+        $users = User::where('status','pending')->with('trxIds')->get();
         return view('admin.user.pending',compact('users'));
     }
 

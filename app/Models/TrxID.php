@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class TrxID extends Model
 {
     use HasFactory;
+
+    function users()
+    {
+        return $this->hasOne(User::class, 'id');
+    }
 }
