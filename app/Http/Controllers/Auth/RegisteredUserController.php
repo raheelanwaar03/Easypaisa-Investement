@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\TrxID;
 use App\Models\User;
+use App\Models\user\PlanDetails;
 use App\Models\user\verificationText;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
@@ -33,7 +34,8 @@ class RegisteredUserController extends Controller
 
     public function package()
     {
-        return view('auth.package');
+        $plans = PlanDetails::where('status',1)->get();
+        return view('auth.package',compact('plans'));
     }
 
     public function storeFees(Request $request)

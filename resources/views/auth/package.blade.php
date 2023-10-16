@@ -54,8 +54,8 @@
             color: white;
             width: 100%;
         }
-        .btn-login:hover
-        {
+
+        .btn-login:hover {
             background-color: white;
             color: green;
             width: 100%;
@@ -74,15 +74,10 @@
                 <div class="brand-logo">
                     <img src="your-logo.png" alt="Your Logo">
                 </div>
-                <h2>Package A</h2>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid cumque neque dolorem, molestiae
-                    alias magni ullam quos, eligendi blanditiis aut ad quae reprehenderit, aspernatur doloribus.</p>
-                <h2>Package B</h2>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid cumque neque dolorem, molestiae
-                    alias magni ullam quos, eligendi blanditiis aut ad quae reprehenderit, aspernatur doloribus.</p>
-                <h2>Package C</h2>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid cumque neque dolorem, molestiae
-                    alias magni ullam quos, eligendi blanditiis aut ad quae reprehenderit, aspernatur doloribus.</p>
+                @foreach ($plans as $item)
+                    <h2>{{ $item->name }}</h2>
+                    <p>{{ $item->details }}.</p>
+                @endforeach
             </div>
         </div>
 
@@ -92,11 +87,13 @@
                     @csrf
                     <div class="form-group">
                         <label>Easypaisa Number</label>
-                        <input type="number" class="form-control" name="easypaisa_number" placeholder="Enter your easypaisa number where you send package details">
+                        <input type="number" class="form-control" name="easypaisa_number"
+                            placeholder="Enter your easypaisa number where you send package details">
                     </div>
                     <div class="form-group">
                         <label>Trx Id:</label>
-                        <input type="number" class="form-control" name="trx_id" placeholder="Enter your Trx Id Correctly">
+                        <input type="number" class="form-control" name="trx_id"
+                            placeholder="Enter your Trx Id Correctly">
                     </div>
                     <div class="form-group">
                         <label>Sender Name</label>
