@@ -28,13 +28,13 @@ class RegisteredUserController extends Controller
 
     public function verfication()
     {
-        $text = verificationText::where('status',1)->first();
+        $text = verificationText::where('status','1')->first();
         return view('auth.verification',compact('text'));
     }
 
     public function package()
     {
-        $plans = PlanDetails::where('status',1)->get();
+        $plans = PlanDetails::where('status','1')->get();
         return view('auth.package',compact('plans'));
     }
 

@@ -14,7 +14,7 @@ class SettingController extends Controller
 {
     public function allLevels()
     {
-        $levels = ReferalLevel::where('status',1)->get();
+        $levels = ReferalLevel::where('status','1')->get();
         return view('admin.setting.level',compact('levels'));
     }
 
@@ -45,7 +45,7 @@ class SettingController extends Controller
 
     public function widthrawLimites()
     {
-        $limites = Setting::where('status',1)->get();
+        $limites = Setting::where('status','1')->get();
         return view('admin.setting.widthraw.limite',compact('limites'));
     }
 
@@ -69,7 +69,7 @@ class SettingController extends Controller
 
     public function text()
     {
-        $texts = verificationText::where('status',1)->get();
+        $texts = verificationText::where('status','1')->get();
         return view('admin.setting.text.index',compact('texts'));
     }
 
@@ -89,7 +89,7 @@ class SettingController extends Controller
 
     public function easypaisa()
     {
-        $easypaisa = EasyPaisaMangement::where('status',1)->get();
+        $easypaisa = EasyPaisaMangement::where('status','1')->get();
         return view('admin.setting.easypaisa.index',compact('easypaisa'));
     }
 
@@ -110,7 +110,7 @@ class SettingController extends Controller
 
     public function homePlans()
     {
-        $home_plans = PlanDetails::where('status',1)->get();
+        $home_plans = PlanDetails::where('status','1')->get();
         return view('admin.setting.plan.all',compact('home_plans'));
     }
 
