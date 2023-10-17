@@ -125,45 +125,7 @@
         </div>
     </div>
 
-    <div class="footer">
-        <div class="row_footer">
-            <div class="column_footer">
-                <div style="text-align: center;">
-                    <i class="fa fa-home"></i>
-                    <br>
-                    <span style="font-size: 12px;">Home</span>
-                </div>
-            </div>
-            <div class="column_footer">
-                <div style="text-align: center;">
-                    <i class="fa fa-map-marker" aria-hidden="true"></i>
-                    <br>
-                    <span style="font-size: 12px;">Cash Points</span>
-                </div>
-            </div>
-            <div class="column_footer">
-                <div>
-                    <i class="fa fa-qrcode"
-                        style="font-size: 35px !important;color: #fff;background-color: #2ABC71;padding:5px 5px;"></i>
-                </div>
-
-            </div>
-            <div class="column_footer">
-                <div style="text-align: center;">
-                    <i class="fa fa-bullhorn" aria-hidden="true"></i>
-                    <br>
-                    <span style="font-size: 12px;">Promotions</span>
-                </div>
-            </div>
-            <div class="column_footer">
-                <div style="text-align: center;">
-                    <i class="fa fa-user"></i>
-                    <br>
-                    <span style="font-size: 12px;">My Account</span>
-                </div>
-            </div>
-        </div>
-    </div>
+    @include('layouts.links')
     </div>
     <script src="{{ asset('assets/js/slider.js') }}"></script>
 </body>
