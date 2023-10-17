@@ -70,7 +70,7 @@
                 <form action="{{ route('logout') }}" method="POST">
                     @csrf
                     <button
-                        style="float: right;text-decoration:none;border:none;background-color:#2ABC71;margin-top:14px;margin-right:8px;"
+                        style="float: right;text-decoration:none;border:none;background-color:#2ABC71;margin-top:12px;margin-right:8px;"
                         type="submit"><i class="fa fa-power-off"
                             style="color: #fff !important;"></i></button>
                 </form>
