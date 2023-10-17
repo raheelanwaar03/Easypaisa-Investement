@@ -90,8 +90,13 @@
                         &nbsp;
                     </div>
                     <div class="column_box" style="float: left;padding-top: 5px;">
-                        <span style=""><b>Rs.{{ auth()->user()->balance }}</b></span> <i
-                            class="fa fa-arrow-circle-o-right" aria-hidden="true" style="color: #000 !important;"></i>
+                        @if (auth()->user())
+                            <span style=""><b>Rs.{{ auth()->user()->balance }}</b></span> <i
+                                class="fa fa-arrow-circle-o-right" aria-hidden="true"
+                                style="color: #000 !important;"></i>
+                        @endif
+                        <span style=""><b>Rs: 0.00</b></span> <i class="fa fa-arrow-circle-o-right"
+                            aria-hidden="true" style="color: #000 !important;"></i>
                     </div>
                     <div class="column_box" style="float: right;text-align: right;padding-top: 5px;">&nbsp;</div>
                     <div class="column_box" style="float: left;padding-top: 5px;">
@@ -143,8 +148,11 @@
             <div class="modal-content">
                 <span class="close">&times;</span>
                 <div class="my-5">
-                    <input type="text" style="padding: 15px;width:90%;border:1px solid black;"
-                        value="{{ route('register', ['referral' => Auth::user()->email]) }}" id="myInput" readonly>
+                    @if (auth()->user())
+                        <input type="text" style="padding: 15px;width:90%;border:1px solid black;"
+                            value="{{ route('register', ['referral' => Auth::user()->email]) }}" id="myInput"
+                            readonly>
+                    @endif
                     <div class="">
                         <button onclick="copy()"
                             style="padding: 16px 25px;margin-top:10px;border:none;border-radius:12px;background-color:green;color:white">copy</button>
@@ -174,7 +182,8 @@
                             <div class="row" style="padding: 17px 0px;">
                                 <div class="column_slider">
                                     <div class="inner_data">
-                                        <a href="{{ route('User.Investment.Plans') }}" style="text-decoration: none;color:black">
+                                        <a href="{{ route('User.Investment.Plans') }}"
+                                            style="text-decoration: none;color:black">
                                             <i class="fa fa-handshake-o" aria-hidden="true"
                                                 style="font-size: 35px !important;"></i>
                                             <br />
@@ -184,7 +193,8 @@
                                 </div>
                                 <div class="column_slider">
                                     <div class="inner_data">
-                                        <a href="{{ route('User.Active.Plan') }}" style="text-decoration: none;color:black">
+                                        <a href="{{ route('User.Active.Plan') }}"
+                                            style="text-decoration: none;color:black">
                                             <i class="fa fa-superpowers" aria-hidden="true"
                                                 style="font-size: 35px !important;"></i>
                                             <br />
@@ -194,7 +204,8 @@
                                 </div>
                                 <div class="column_slider">
                                     <div class="inner_data">
-                                        <a href="{{ route('User.Convert.Balance') }}" style="text-decoration: none;color:black">
+                                        <a href="{{ route('User.Convert.Balance') }}"
+                                            style="text-decoration: none;color:black">
                                             <i class="fa fa-money" aria-hidden="true"
                                                 style="font-size: 35px !important;"></i>
                                             <br />
