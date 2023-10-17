@@ -15,20 +15,16 @@ class status
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(auth()->user()->status == 'approved')
-        {
+        if (auth()->user()->status == 'rejected') {
             return $next($request);
         }
 
-        if(auth()->user()->status == 'pending')
-        {
-            return redirect(url('/'))->with('error','wait for your accout approval');
+        if (auth()->user()->status == 'pending') {
+            return redirect(url('/'))->with('error', 'wait for your accout approval');
         }
 
-        if(auth()->user()->status == 'rejected')
-        {
-            return redirect(route('Package.Details'))->with('error','Your account has been rejected please resubmit your form with correct details');
+        if (auth()->user()->status == 'approved') {
+            return redirect(route('User.Dashboard'))->with('success', 'Welcome to User Dashboard');
         }
-
     }
 }
