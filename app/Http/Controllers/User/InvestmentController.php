@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\user;
 
-use App\Http\Controllers\Controller;
-use App\Models\admin\Plans;
-use App\Models\User;
-use App\Models\user\BuyPlan;
-use App\Models\user\EasyPaisaMangement;
-use App\Models\user\GivenProfit;
-use App\Models\user\Wallet;
+use app\Http\Controllers\Controller;
+use app\Models\admin\Plans;
+use app\Models\User;
+use app\Models\user\BuyPlan;
+use app\Models\user\EasyPaisaMangement;
+use app\Models\user\GivenProfit;
+use app\Models\user\Wallet;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
