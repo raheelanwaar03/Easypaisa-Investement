@@ -1,14 +1,14 @@
 <?php
 
-namespace app\Console\Commands;
+namespace App\Console\Commands;
 
-use app\Models\admin\Plans;
-use app\Models\User;
-use app\Models\user\EasyPaisaMangement;
-use app\Models\user\PlanDetails;
-use app\Models\user\ReferalLevel;
-use app\Models\user\Setting;
-use app\Models\user\verificationText;
+use App\Models\admin\Plans;
+use App\Models\User;
+use App\Models\user\EasyPaisaMangement;
+use App\Models\user\PlanDetails;
+use App\Models\user\ReferalLevel;
+use App\Models\user\Setting;
+use App\Models\user\verificationText;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Hash;
