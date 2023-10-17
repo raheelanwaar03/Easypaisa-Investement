@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminDashboardController;
+use App\Http\Controllers\Admin\AdminTaskController;
 use App\Http\Controllers\Admin\PlansController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\WidthrawRequestsController;
@@ -54,7 +55,7 @@ Route::prefix('Admin/')->name('Admin.')->middleware('auth', 'admin')->group(func
     Route::get('Verfication/Page/Text',[SettingController::class,'text'])->name('Verification.Text');
     Route::get('Edit/Verfication/Page/Text/{id}',[SettingController::class,'editText'])->name('Edit.Verification.Text');
     Route::post('Update/Verfication/Page/Text/{id}',[SettingController::class,'updateText'])->name('Update.Verification.Text');
-    // esdypaisa
+    // easypaisa
     Route::get('Easypaisa/Number',[SettingController::class,'easypaisa'])->name('Easypaisa.Num');
     Route::get('Edit/Easypaisa/Number',[SettingController::class,'editEasypaisa'])->name('Edit.Easypaisa.Num');
     Route::post('Update/Easypaisa/Number',[SettingController::class,'updateEasypaisa'])->name('Update.Easypaisa.Num');
@@ -62,6 +63,9 @@ Route::prefix('Admin/')->name('Admin.')->middleware('auth', 'admin')->group(func
     Route::get('All/Plans/Details',[SettingController::class,'homePlans'])->name('All.Home.Plans');
     Route::get('Edit/Plan/Details/{id}',[SettingController::class,'editPlan'])->name('Edit.Home.Plan');
     Route::get('Update/Plan/Details/{id}',[SettingController::class,'updatePlan'])->name('Update.Home.Plan');
+    // Add task
+    Route::get('Add/Task',[AdminTaskController::class,'add'])->name('Add.Task');
+    Route::get('Store/Task',[AdminTaskController::class,'store'])->name('Store.Task');
 
 
 });
