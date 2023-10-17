@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\admin;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Models\User\WidthrawReq;
-use Illuminate\Http\Request;
+
 
 class WidthrawRequestsController extends Controller
 {

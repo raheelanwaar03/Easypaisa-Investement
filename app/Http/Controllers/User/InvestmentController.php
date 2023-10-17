@@ -16,7 +16,6 @@ class InvestmentController extends Controller
 {
     public function index()
     {
-        return 2;
         $plans = Plans::get();
         return view('user.invest.index',compact('plans'));
     }

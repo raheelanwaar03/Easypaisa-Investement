@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\user\InvestmentController;
+use App\Http\Controllers\User\InvestmentController;
 use App\Http\Controllers\User\UserDashboardController;
 use Illuminate\Support\Facades\Route;
 

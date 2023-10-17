@@ -2,8 +2,8 @@
 
 use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\Admin\PlansController;
-use App\Http\Controllers\admin\SettingController;
-use App\Http\Controllers\admin\WidthrawRequestsController;
+use App\Http\Controllers\Admin\SettingController;
+use App\Http\Controllers\Admin\WidthrawRequestsController;
 use Illuminate\Support\Facades\Route;
 
 
