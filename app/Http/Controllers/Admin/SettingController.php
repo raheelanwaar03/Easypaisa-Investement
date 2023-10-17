@@ -110,22 +110,22 @@ class SettingController extends Controller
 
     public function homePlans()
     {
-        $plans = PlanDetails::where('status',1)->get();
-        return view('admin.setting.plan.all',compact('plans'));
+        $home_plans = PlanDetails::where('status',1)->get();
+        return view('admin.setting.plan.all',compact('home_plans'));
     }
 
     public function editPlan($id)
     {
-        $plan = PlanDetails::find($id);
-        return view('admin.setting.plan.edit',compact('plan'));
+        $home_plan = PlanDetails::find($id);
+        return view('admin.setting.plan.edit',compact('home_plan'));
     }
 
     public function updatePlan(Request $request,$id)
     {
-        $plan = PlanDetails::find($id);
-        $plan->plan_name = $request->plan_name;
-        $plan->details = $request->details;
-        $plan->save();
+        $home_plan = PlanDetails::find($id);
+        $home_plan->plan_name = $request->plan_name;
+        $home_plan->details = $request->details;
+        $home_plan->save();
         return redirect()->back()->with('success','Plans details updated');
     }
 

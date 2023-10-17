@@ -47,23 +47,23 @@ class clean extends Command
         $easyPaisa->save();
 
         // Plan Details
-        $easyPaisa = new PlanDetails();
-        $easyPaisa->plan_name = 'First Plan';
-        $easyPaisa->details = 'In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available';
-        $easyPaisa->status = 1;
-        $easyPaisa->save();
+        $home_plan = new PlanDetails();
+        $home_plan->plan_name = 'First Plan';
+        $home_plan->details = 'In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available';
+        $home_plan->status = 1;
+        $home_plan->save();
 
-        $easyPaisa = new PlanDetails();
-        $easyPaisa->plan_name = 'Second Plan';
-        $easyPaisa->details = 'In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available';
-        $easyPaisa->status = 1;
-        $easyPaisa->save();
+        $home_plan = new PlanDetails();
+        $home_plan->plan_name = 'Second Plan';
+        $home_plan->details = 'In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available';
+        $home_plan->status = 1;
+        $home_plan->save();
 
-        $easyPaisa = new PlanDetails();
-        $easyPaisa->plan_name = 'Third Plan';
-        $easyPaisa->details = 'In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available';
-        $easyPaisa->status = 1;
-        $easyPaisa->save();
+        $home_plan = new PlanDetails();
+        $home_plan->plan_name = 'Third Plan';
+        $home_plan->details = 'In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available';
+        $home_plan->status = 1;
+        $home_plan->save();
 
         // Referal limite
         $setting = new Setting();

@@ -21,7 +21,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($plans as $plan)
+                                        @foreach ($home_plans as $plan)
                                             <tr>
                                                 <td>{{ $plan->plan_name }}</td>
                                                 <td>{{ $plan->details }}</td>
