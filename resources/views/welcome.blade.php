@@ -75,9 +75,9 @@
                 </form>
             @else
                 <button
-                    style="float: right;text-decoration:none;border:none;background-color:#2ABC71;margin-top:12px;margin-right:8px;"
+                    style="float: right;text-decoration:none;border:none;background-color:#2ABC71;margin-top:14px;margin-right:8px;"
                     type="submit"><a href="{{ route('login') }}"><i class="fa fa-bell-o"
-                            style="color: #fff !important;font-size:15px;"></i></a></button>
+                            style="color: #fff !important;"></i></a></button>
             @endif
             <a href="#" style="float: right;"><i class="fa fa-search" style="color: #fff !important;"></i></a>
 
