@@ -209,14 +209,6 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="column_slider">
-                                    <div class="inner_data">
-                                        <i class="fa fa-ellipsis-h" aria-hidden="true"
-                                            style="font-size: 35px !important;"></i>
-                                        <br />
-                                        <span style="font-size: 15px;">See All</span>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                         <div class="slider__slide">
