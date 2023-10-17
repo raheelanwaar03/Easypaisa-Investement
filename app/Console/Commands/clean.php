@@ -69,9 +69,9 @@ class clean extends Command
         $setting = new Setting();
         $setting->min_widthraw = '50';
         $setting->max_widthraw = '500';
-        $setting->planA = '10';
-        $setting->planB = '20';
-        $setting->planC = '30';
+        $setting->planA = '100';
+        $setting->planB = '200';
+        $setting->planC = '300';
         $setting->status = 1;
         $setting->save();
 
