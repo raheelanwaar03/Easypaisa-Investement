@@ -75,7 +75,7 @@
                     <img src="your-logo.png" alt="Your Logo">
                 </div>
                 @foreach ($plans as $item)
-                    <h2>{{ $item->name }}</h2>
+                    <h2>{{ $item->plan_name }}</h2>
                     <p>{{ $item->details }}.</p>
                 @endforeach
             </div>
