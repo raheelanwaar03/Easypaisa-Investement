@@ -66,14 +66,20 @@
         <div class="topnav">
             <a href="#"
                 style="text-align: center;margin-left:180px;color: #fff;"><span><b>{{ env('APP_NAME') }}</b></span></a>
-            <form action="{{ route('logout') }}" method="POST">
-                @csrf
+            @if (auth()->user())
+                <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <button
+                        style="float: right;text-decoration:none;border:none;background-color:#2ABC71;margin-top:12px;margin-right:8px;"
+                        type="submit"><i class="fa fa-power-off" style="color: #fff !important;"></i></button>
+                </form>
+            @else
                 <button
                     style="float: right;text-decoration:none;border:none;background-color:#2ABC71;margin-top:12px;margin-right:8px;"
-                    type="submit"><i class="fa fa-bell-o" style="color: #fff !important;"></i></button>
-            </form>
+                    type="submit"><a href="{{ route('login') }}"><i class="fa fa-sign-in"
+                            style="color: #fff !important;"></i></a></button>
+            @endif
             <a href="#" style="float: right;"><i class="fa fa-search" style="color: #fff !important;"></i></a>
-
         </div>
         <div class="wrapper_one" style="background-color: #2ABC71;width: 100%;height: 170px;padding-left: 10px;">
             <div>&nbsp;</div>
@@ -104,7 +110,6 @@
                                 Cash</button></a>
                     </div>
                 </div>
-
             </div>
         </div>
         <div class="wrapper_two" style="margin: 0px 10px;">
@@ -174,7 +179,8 @@
                             <div class="row" style="padding: 17px 0px;">
                                 <div class="column_slider">
                                     <div class="inner_data">
-                                        <a href="{{ route('User.Investment.Plans') }}" style="text-decoration: none;color:black">
+                                        <a href="{{ route('User.Investment.Plans') }}"
+                                            style="text-decoration: none;color:black">
                                             <i class="fa fa-handshake-o" aria-hidden="true"
                                                 style="font-size: 35px !important;"></i>
                                             <br />
@@ -184,7 +190,8 @@
                                 </div>
                                 <div class="column_slider">
                                     <div class="inner_data">
-                                        <a href="{{ route('User.Active.Plan') }}" style="text-decoration: none;color:black">
+                                        <a href="{{ route('User.Active.Plan') }}"
+                                            style="text-decoration: none;color:black">
                                             <i class="fa fa-superpowers" aria-hidden="true"
                                                 style="font-size: 35px !important;"></i>
                                             <br />
@@ -194,7 +201,8 @@
                                 </div>
                                 <div class="column_slider">
                                     <div class="inner_data">
-                                        <a href="{{ route('User.Convert.Balance') }}" style="text-decoration: none;color:black">
+                                        <a href="{{ route('User.Convert.Balance') }}"
+                                            style="text-decoration: none;color:black">
                                             <i class="fa fa-money" aria-hidden="true"
                                                 style="font-size: 35px !important;"></i>
                                             <br />
