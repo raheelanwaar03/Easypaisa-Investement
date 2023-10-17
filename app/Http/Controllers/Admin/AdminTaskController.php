@@ -34,4 +34,11 @@ class AdminTaskController extends Controller
         $task->save();
         return redirect()->back()->with('success', 'Task added successfully');
     }
+
+    public function delete($id)
+    {
+        $task = Task::find($id);
+        $task->delete();
+        return redirect()->back()->with('success', 'Task Deleted');
+    }
 }

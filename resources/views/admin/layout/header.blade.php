@@ -271,6 +271,7 @@
 						</a>
 						<ul aria-expanded="false">
 							<li><a href="{{ route('Admin.Add.Task') }}">Add Task</a></li>
+							<li><a href="{{ route('Admin.All.Task') }}">All Tasks</a></li>
 						</ul>
 					</li>
                 </ul>

@@ -66,6 +66,7 @@ Route::prefix('Admin/')->name('Admin.')->middleware('auth', 'admin')->group(func
     // Add task
     Route::get('Add/Task',[AdminTaskController::class,'add'])->name('Add.Task');
     Route::post('Store/Task',[AdminTaskController::class,'store'])->name('Store.Task');
+    Route::get('Delete/Task/{id}',[AdminTaskController::class,'delete'])->name('Delete.Task');
 
 
 });
