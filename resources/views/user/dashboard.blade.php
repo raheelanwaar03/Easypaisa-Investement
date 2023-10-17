@@ -71,8 +71,7 @@
                     @csrf
                     <button
                         style="float: right;text-decoration:none;border:none;background-color:#2ABC71;margin-top:12px;margin-right:8px;"
-                        type="submit"><i class="fa fa-power-off"
-                            style="color: #fff !important;"></i></button>
+                        type="submit"><i class="fa fa-power-off" style="color: #fff !important;"></i></button>
                 </form>
             @else
                 <button
@@ -80,7 +79,6 @@
                     type="submit"><a href="{{ route('login') }}"><i class="fa fa-sign-in"
                             style="color: #fff !important;"></i></a></button>
             @endif
-            <a href="#" style="float: right;"><i class="fa fa-search" style="color: #fff !important;"></i></a>
         </div>
         <div class="wrapper_one" style="background-color: #2ABC71;width: 100%;height: 170px;padding-left: 10px;">
             <div>&nbsp;</div>
