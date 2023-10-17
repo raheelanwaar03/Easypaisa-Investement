@@ -34,6 +34,11 @@ class RegisteredUserController extends Controller
 
     public function package()
     {
+        if(auth()->user()->status == 'approved')
+        {
+            return redirect(route('User.Dashboard'));
+        }
+
         $plans = PlanDetails::where('status','1')->get();
         return view('auth.package',compact('plans'));
     }
