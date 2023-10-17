@@ -94,9 +94,10 @@
                             <span style=""><b>Rs.{{ auth()->user()->balance }}</b></span> <i
                                 class="fa fa-arrow-circle-o-right" aria-hidden="true"
                                 style="color: #000 !important;"></i>
-                        @endif
+                        @else
                         <span style=""><b>Rs: 0.00</b></span> <i class="fa fa-arrow-circle-o-right"
                             aria-hidden="true" style="color: #000 !important;"></i>
+                        @endif
                     </div>
                     <div class="column_box" style="float: right;text-align: right;padding-top: 5px;">&nbsp;</div>
                     <div class="column_box" style="float: left;padding-top: 5px;">
@@ -151,6 +152,10 @@
                     @if (auth()->user())
                         <input type="text" style="padding: 15px;width:90%;border:1px solid black;"
                             value="{{ route('register', ['referral' => Auth::user()->email]) }}" id="myInput"
+                            readonly>
+                    @else
+                    <input type="text" style="padding: 15px;width:90%;border:1px solid black;"
+                            value="#" id="myInput"
                             readonly>
                     @endif
                     <div class="">
