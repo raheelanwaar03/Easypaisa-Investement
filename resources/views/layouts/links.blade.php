@@ -29,10 +29,10 @@
         </div>
         <div class="column_footer">
             <div style="text-align: center;">
-                <a href="{{ route('User.Team.Members') }}" style="text-decoration: none;color:black">
-                    <i class="fa fa-users" aria-hidden="true"></i>
+                <a href="{{ route('User.Task') }}" style="text-decoration: none;color:black">
+                    <i class="fa fa-tasks" aria-hidden="true"></i>
                     <br>
-                    <span style="font-size: 12px;">Team</span>
+                    <span style="font-size: 12px;">Tasks</span>
                 </a>
             </div>
         </div>

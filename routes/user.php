@@ -12,6 +12,7 @@ Route::prefix('User/')->name('User.')->middleware('auth', 'user')->group(functio
     Route::post('Store/Widthraw',[UserDashboardController::class,'storeWidthraw'])->name('Store.Widthraw');
     Route::get('Widthraw/History',[UserDashboardController::class,'history'])->name('Widthraw.History');
     Route::get('Team/Members',[UserDashboardController::class,'team'])->name('Team.Members');
+    Route::get('Task',[UserDashboardController::class,'task'])->name('Task');
     Route::get('Invest',[InvestmentController::class,'index'])->name('Investment.Plans');
     // buy plan
     Route::get('Buy/Plan/{id}',[InvestmentController::class,'buyPlan'])->name('Buy.Plan');

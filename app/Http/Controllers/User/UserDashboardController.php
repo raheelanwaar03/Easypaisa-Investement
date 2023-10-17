@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Models\admin\Task;
 use App\Models\User;
 use App\Models\User\WidthrawReq;
 use Illuminate\Http\Request;
@@ -49,6 +50,12 @@ class UserDashboardController extends Controller
         $widthraw->save();
         return redirect()->back()->with('success','Your widthraw request submited successfully');
 
+    }
+
+    public function task()
+    {
+        $tasks = Task::get();
+        return view('user.work.task',compact('tasks'));
     }
 
     public function history()
