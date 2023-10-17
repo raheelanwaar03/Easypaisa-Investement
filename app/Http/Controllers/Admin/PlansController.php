@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
-use app\Http\Controllers\Controller;
-use app\Models\admin\Plans;
-use app\Models\user\BuyPlan;
+use App\Http\Controllers\Controller;
+use App\Models\admin\Plans;
+use App\Models\user\BuyPlan;
 use Illuminate\Http\Request;
 
 class PlansController extends Controller

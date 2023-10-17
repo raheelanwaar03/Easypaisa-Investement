@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\admin;
 
-use app\Http\Controllers\Controller;
-use app\Models\User;
-use app\Models\user\WidthrawReq;
+use App\Http\Controllers\Controller;
+use App\Models\User;
+use App\Models\user\WidthrawReq;
 use Illuminate\Http\Request;
 
 class WidthrawRequestsController extends Controller

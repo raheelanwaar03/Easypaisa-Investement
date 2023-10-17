@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\admin;
 
-use app\Http\Controllers\Controller;
-use app\Models\user\EasyPaisaMangement;
-use app\Models\user\PlanDetails;
-use app\Models\user\ReferalLevel;
-use app\Models\user\Setting;
-use app\Models\user\verificationText;
+use App\Http\Controllers\Controller;
+use App\Models\user\EasyPaisaMangement;
+use App\Models\user\PlanDetails;
+use App\Models\user\ReferalLevel;
+use App\Models\user\Setting;
+use App\Models\user\verificationText;
 use Illuminate\Http\Request;
 
 class SettingController extends Controller
