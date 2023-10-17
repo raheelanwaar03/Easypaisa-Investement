@@ -65,7 +65,7 @@ Route::prefix('Admin/')->name('Admin.')->middleware('auth', 'admin')->group(func
     Route::get('Update/Plan/Details/{id}',[SettingController::class,'updatePlan'])->name('Update.Home.Plan');
     // Add task
     Route::get('Add/Task',[AdminTaskController::class,'add'])->name('Add.Task');
-    Route::get('Store/Task',[AdminTaskController::class,'store'])->name('Store.Task');
+    Route::post('Store/Task',[AdminTaskController::class,'store'])->name('Store.Task');
 
 
 });

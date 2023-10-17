@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\admin\Task;
 use Illuminate\Http\Request;
 
 class AdminTaskController extends Controller
@@ -25,12 +26,12 @@ class AdminTaskController extends Controller
         $imageName = rand(1111111, 9999999) . '.' . $image->getClientOriginalExtension();
         $image->move(public_path('images/'), $imageName);
 
-        $task = new AdminTaskController();
+        $task = new Task();
         $task->title = $validated['title'];
         $task->link = $validated['link'];
         $task->description = $validated['description'];
         $task->image = $imageName;
         $task->save();
-        return redirect()->back()->with('error', 'Task added successfully');
+        return redirect()->back()->with('success', 'Task added successfully');
     }
 }

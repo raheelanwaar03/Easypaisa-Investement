@@ -12,7 +12,7 @@
                                 <h3 style="text-align: center">Add Task</h3>
                             </div>
                             <div class="card-body">
-                                <form action="{{ route('Admin.Store.Task') }}" method="POST">
+                                <form action="{{ route('Admin.Store.Task') }}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <div class="form-group">
                                         <label for="">Title</label>
