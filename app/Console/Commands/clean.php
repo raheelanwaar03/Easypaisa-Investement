@@ -40,6 +40,11 @@ class clean extends Command
         Artisan::call('view:clear');
         Artisan::call('route:clear');
 
+        $easyPaisa = new EasyPaisaMangement();
+        $easyPaisa->easy_name = 'test';
+        $easyPaisa->easy_num = '9999999999';
+        $easyPaisa->status = 1;
+        $easyPaisa->save();
 
         // Plan Details
         $easyPaisa = new PlanDetails();
@@ -57,14 +62,6 @@ class clean extends Command
         $easyPaisa = new PlanDetails();
         $easyPaisa->plan_name = 'Third Plan';
         $easyPaisa->details = 'In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available';
-        $easyPaisa->status = 1;
-        $easyPaisa->save();
-
-        // Easypaisa details
-
-        $easyPaisa = new EasyPaisaMangement();
-        $easyPaisa->easy_name = 'test';
-        $easyPaisa->easy_num = '9999999999';
         $easyPaisa->status = 1;
         $easyPaisa->save();
 
