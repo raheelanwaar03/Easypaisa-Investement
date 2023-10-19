@@ -73,7 +73,7 @@ class AdminDashboardController extends Controller
         if ($userPlan == 'Silver') {
             $firstUpliner = User::where('email', $user->referral)->where('status', 'approved')->first();
             if ($firstUpliner == '') {
-                return redirect()->back()->with('massage', 'Account has beed Approved successfully');
+                return redirect()->back()->with('success', 'Account has beed Approved successfully');
             } else {
                 $firstUpliner->balance += $silver;
                 // giving upliner his level
@@ -132,7 +132,7 @@ class AdminDashboardController extends Controller
                 // getting user
                 $secondUpliner = User::where('email', $firstUpliner->referral)->where('status', 'approved')->first();
                 if ($secondUpliner == '') {
-                    return redirect()->back()->with('massage', 'Account has beed Approved successfully');
+                    return redirect()->back()->with('success', 'Account has beed Approved successfully');
                 } else {
                     $secondUpliner->balance += $indirectCommission1;
                     $secondUpliner->save();
@@ -142,7 +142,7 @@ class AdminDashboardController extends Controller
                 // getting third person;
                 $thirdUpliner = User::where('email', $secondUpliner->referral)->where('status', 'approved')->first();
                 if ($thirdUpliner == '') {
-                    return redirect()->back()->with('massage', 'Account has beed Approved successfully');
+                    return redirect()->back()->with('success', 'Account has beed Approved successfully');
                 } else {
                     $thirdUpliner->balance += $indirectCommission2;
                     $thirdUpliner->save();
@@ -153,7 +153,7 @@ class AdminDashboardController extends Controller
         if ($userPlan == 'Gold') {
             $firstUpliner = User::where('email', $user->referral)->where('status', 'approved')->first();
             if ($firstUpliner == '') {
-                return redirect()->back()->with('massage', 'Account has beed Approved successfully');
+                return redirect()->back()->with('success', 'Account has beed Approved successfully');
             } else {
                 $firstUpliner->balance += $gold;
                 // giving upliner his level
@@ -212,7 +212,7 @@ class AdminDashboardController extends Controller
                 // getting user
                 $secondUpliner = User::where('email', $firstUpliner->referral)->where('status', 'approved')->first();
                 if ($secondUpliner == '') {
-                    return redirect()->back()->with('massage', 'Account has beed Approved successfully');
+                    return redirect()->back()->with('success', 'Account has beed Approved successfully');
                 } else {
                     $secondUpliner->balance += $indirectCommission1;
                     $secondUpliner->save();
@@ -222,7 +222,7 @@ class AdminDashboardController extends Controller
                 // getting third person;
                 $thirdUpliner = User::where('email', $secondUpliner->referral)->where('status', 'approved')->first();
                 if ($thirdUpliner == '') {
-                    return redirect()->back()->with('massage', 'Account has beed Approved successfully');
+                    return redirect()->back()->with('success', 'Account has beed Approved successfully');
                 } else {
                     $thirdUpliner->balance += $indirectCommission2;
                     $thirdUpliner->save();
@@ -233,7 +233,7 @@ class AdminDashboardController extends Controller
         if ($userPlan == 'Dimond') {
             $firstUpliner = User::where('email', $user->referral)->where('status', 'approved')->first();
             if ($firstUpliner == '') {
-                return redirect()->back()->with('massage', 'Account has beed Approved successfully');
+                return redirect()->back()->with('success', 'Account has beed Approved successfully');
             } else {
                 $firstUpliner->balance += $dimond;
                 // giving upliner his level
@@ -292,7 +292,7 @@ class AdminDashboardController extends Controller
                 // getting user
                 $secondUpliner = User::where('email', $firstUpliner->referral)->where('status', 'approved')->first();
                 if ($secondUpliner == '') {
-                    return redirect()->back()->with('massage', 'Account has beed Approved successfully');
+                    return redirect()->back()->with('success', 'Account has beed Approved successfully');
                 } else {
                     $secondUpliner->balance += $indirectCommission1;
                     $secondUpliner->save();
@@ -302,7 +302,7 @@ class AdminDashboardController extends Controller
                 // getting third person;
                 $thirdUpliner = User::where('email', $secondUpliner->referral)->where('status', 'approved')->first();
                 if ($thirdUpliner == '') {
-                    return redirect()->back()->with('massage', 'Account has beed Approved successfully');
+                    return redirect()->back()->with('success', 'Account has beed Approved successfully');
                 } else {
                     $thirdUpliner->balance += $indirectCommission2;
                     $thirdUpliner->save();
@@ -312,7 +312,7 @@ class AdminDashboardController extends Controller
 
 
 
-        return redirect()->back()->with('massage', 'User Approved Successfully');
+        return redirect()->back()->with('success', 'User Approved Successfully');
     }
 
     public function approved()
