@@ -231,7 +231,7 @@ class AdminDashboardController extends Controller
         }
 
         if ($userPlan == 'Dimond') {
-            $firstUpliner = User::where('email', $user->referal)->where('status', 'approved')->first();
+            $firstUpliner = User::where('email', $user->referral)->where('status', 'approved')->first();
             if ($firstUpliner == '') {
                 return redirect()->back()->with('massage', 'Account has beed Approved successfully');
             } else {
@@ -290,7 +290,7 @@ class AdminDashboardController extends Controller
                 //  Second Upliner
                 $indirectCommission1 = $dimond_Second_Commission;
                 // getting user
-                $secondUpliner = User::where('email', $firstUpliner->referal)->where('status', 'approved')->first();
+                $secondUpliner = User::where('email', $firstUpliner->referral)->where('status', 'approved')->first();
                 if ($secondUpliner == '') {
                     return redirect()->back()->with('massage', 'Account has beed Approved successfully');
                 } else {
@@ -300,7 +300,7 @@ class AdminDashboardController extends Controller
                 // Third UPliner
                 $indirectCommission2 = $dimond_Third_Commission;
                 // getting third person;
-                $thirdUpliner = User::where('email', $secondUpliner->referal)->where('status', 'approved')->first();
+                $thirdUpliner = User::where('email', $secondUpliner->referral)->where('status', 'approved')->first();
                 if ($thirdUpliner == '') {
                     return redirect()->back()->with('massage', 'Account has beed Approved successfully');
                 } else {
@@ -309,6 +309,8 @@ class AdminDashboardController extends Controller
                 }
             }
         }
+
+
 
         return redirect()->back()->with('massage', 'User Approved Successfully');
     }
