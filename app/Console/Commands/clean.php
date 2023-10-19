@@ -123,7 +123,7 @@ class clean extends Command
         $user->name = 'Admin';
         $user->referral = 'default';
         $user->balance = '0';
-        $user->package = 'dimond';
+        $user->package = 'Dimond';
         $user->mobile = '03000000000';
         $user->email = 'admin@gmail.com';
         $user->password = Hash::make('asdfasdf');
@@ -136,7 +136,7 @@ class clean extends Command
         $user->name = 'User';
         $user->email = 'user@gmail.com';
         $user->referral = 'default';
-        $user->package = 'dimond';
+        $user->package = 'Dimond';
         $user->balance = '10';
         $user->mobile = '03000000000';
         $user->password = Hash::make('asdfasdf');
