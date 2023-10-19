@@ -56,8 +56,7 @@
             width: 100%;
         }
 
-        .btn-login:hover
-        {
+        .btn-login:hover {
             background-color: white;
             color: green;
             width: 100%;
@@ -107,9 +106,9 @@
                     <div class="form-group">
                         <label for="package">Package</label>
                         <select name="package" class="form-control" id="package" required>
-                            <option value="A">Price: 499</option>
-                            <option value="B">Price: 799</option>
-                            <option value="C">Price: 1499</option>
+                            <option value="Silver">Silver: 499</option>
+                            <option value="Gold">Gold: 799</option>
+                            <option value="Dimond">Dimond: 1499</option>
                         </select>
                     </div>
                     <input type="text" name="referral" value="{{ $referral }}" hidden>
