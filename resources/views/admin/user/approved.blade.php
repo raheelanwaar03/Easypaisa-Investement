@@ -19,6 +19,7 @@
                                             <th>Email</th>
                                             <th>Balance</th>
                                             <th>Referral</th>
+                                            <th>Package</th>
                                             <th>TrxId</th>
                                             <th>Status</th>
                                             <th>Action</th>
@@ -31,6 +32,7 @@
                                                 <td>{{ $user->email }}</td>
                                                 <td>{{ $user->balance }}</td>
                                                 <td>{{ $user->referral }}</td>
+                                                <td>{{ $user->package }}</td>
                                                 <td>{{ $user->trxIds->trx_id ?? 'UnpaidUser'  }}</td>
                                                 <td>{{ $user->status }}</td>
                                                 <td>

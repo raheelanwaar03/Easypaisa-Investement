@@ -19,6 +19,7 @@
                                             <th>Email</th>
                                             <th>Balance</th>
                                             <th>Referral</th>
+                                            <th>Package</th>
                                             <th>TrxId</th>
                                             <th>Status</th>
                                             <th>Action</th>
@@ -31,7 +32,8 @@
                                                 <td>{{ $user->email }}</td>
                                                 <td>{{ $user->balance }}</td>
                                                 <td>{{ $user->referral }}</td>
-                                                <td>{{ $user->trxIds->trx_id ?? 'UnpaidUser'  }}</td>
+                                                <td>{{ $user->package }}</td>
+                                                <td>{{ $user->trxIds->trx_id ?? 'UnpaidUser' }}</td>
                                                 <td>{{ $user->status }}</td>
                                                 <td>
                                                     <a href="{{ route('Admin.Make.User.Approve', ['id' => $user->id]) }}"
@@ -50,8 +52,8 @@
                     </div>
                 </div>
                 <!--**********************************
-                                            Footer start
-                                        ***********************************-->
+                                                Footer start
+                                            ***********************************-->
                 <div class="footer">
                     <div class="copyright">
                         <p>Copyright © Designed &amp; Developed by <a href="#">
@@ -59,8 +61,8 @@
                     </div>
                 </div>
                 <!--**********************************
-                                            Footer end
-                                        ***********************************-->
+                                                Footer end
+                                            ***********************************-->
 
             </div>
         </div>
