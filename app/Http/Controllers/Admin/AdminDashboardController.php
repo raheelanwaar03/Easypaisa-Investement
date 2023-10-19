@@ -306,7 +306,7 @@ class AdminDashboardController extends Controller
                 } else {
                     $thirdUpliner->balance += $indirectCommission2;
                     $thirdUpliner->save();
-                };
+                }
             }
         }
 
