@@ -13,6 +13,12 @@ class AdminTaskController extends Controller
         return view('admin.task.add');
     }
 
+    public function all()
+    {
+        $tasks = Task::get();
+        return view('admin.task.all', compact('tasks'));
+    }
+
     public function store(Request $request)
     {
         $validated = $request->validate([
